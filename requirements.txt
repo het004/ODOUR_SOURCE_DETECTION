@@ -1,0 +1,5 @@
+setuptools
+geopandas
+pandas
+shapely
+-e .
