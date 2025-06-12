@@ -26,7 +26,7 @@ class Dataingestion_DataProcessing:
             df=gpd.read_file(r"data\export (2).geojson")
             logging.info("Read the datasets as geopanda dataframe")
             os.makedirs(os.path.dirname(self.ingestion_processing_config.raw_data_path),exist_ok=True)
-            df.to_file(self.ingestion_processing_config.raw_data_path,index=False,header=True)
+            df.to_file(self.ingestion_processing_config.raw_data_path, index=False)
             logging.info("Ingestion is completed")
             return(
                 self.ingestion_processing_config.raw_data_path

@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: ODOUR_SOURCE_DETECTION
+Version: 0.0.1
+Author: Het
+Author-email: shahheta1973@gmail.com
+Requires-Dist: setuptools
+Requires-Dist: geopandas
+Requires-Dist: pandas
+Requires-Dist: shapely
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist

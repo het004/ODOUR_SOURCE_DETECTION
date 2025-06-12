@@ -1,0 +1,6 @@
+2025-06-12 19:51:59,589 - root - INFO - Entered the data ingestion method or component Load a GeoJSON file into a GeoDataFrame.
+2025-06-12 19:52:01,935 - root - INFO - Read the datasets as geopanda dataframe
+2025-06-12 19:53:19,514 - root - INFO - Entered the data ingestion method or component Load a GeoJSON file into a GeoDataFrame.
+2025-06-12 19:53:19,898 - root - INFO - Read the datasets as geopanda dataframe
+2025-06-12 19:53:20,150 - pyogrio._io - INFO - Created 419 records
+2025-06-12 19:53:20,151 - root - INFO - Ingestion is completed
