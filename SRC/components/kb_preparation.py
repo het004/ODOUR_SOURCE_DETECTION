@@ -6,6 +6,7 @@ from SRC.exception import CustomException
 from SRC.logger import logging
 from dataclasses import dataclass
 import pickle
+import json
 
 @dataclass
 class KBPreparationConfig:
@@ -31,8 +32,15 @@ class KBPreparation:
         """Combines relevant text columns into a single string per record for TF-IDF."""
         try:
             logging.info("Preprocessing text data for TF-IDF vectorization.")
-            # Assuming 'tags' is a JSON string column
-            df['tags_combined'] = df['tags'].apply(lambda x: " ".join(eval(x).values()) if pd.notna(x) else "")
+            # Parse 'tags' JSON strings safely
+            def parse_tags(tags_str):
+                try:
+                    tags_dict = json.loads(tags_str)  # Use json.loads instead of eval
+                    return " ".join(tags_dict.values())
+                except json.JSONDecodeError:
+                    logging.warning(f"Invalid JSON in tags: {tags_str}")
+                    return ""  # Return empty string for invalid JSON
+            df['tags_combined'] = df['tags'].apply(parse_tags)
             df['combined_text'] = df[['name', 'type', 'tags_combined']].fillna('').agg(' '.join, axis=1)
             logging.info("Text preprocessing completed.")
             return df['combined_text']

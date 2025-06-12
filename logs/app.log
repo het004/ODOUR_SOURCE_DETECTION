@@ -25,3 +25,103 @@
 2025-06-12 22:36:06,664 - root - INFO - TF-IDF vectorizer saved at artifacts\tfidf_vectorizer.pkl.
 2025-06-12 22:36:06,664 - root - INFO - TF-IDF feature matrix saved at artifacts\feature_matrix.pkl.
 2025-06-12 22:36:06,664 - root - INFO - Knowledge base preparation completed successfully.
+2025-06-13 00:08:37,437 - root - INFO - Loading knowledge base artifacts.
+2025-06-13 00:08:37,513 - root - INFO - Artifacts loaded successfully.
+2025-06-13 00:08:37,514 - root - INFO - Geocoding location: bodakdev
+2025-06-13 00:08:38,503 - root - INFO - Location found: (23.0445921, 72.517344)
+2025-06-13 00:08:38,503 - root - INFO - Identifying nearby odor sources.
+2025-06-13 00:08:38,724 - root - INFO - Found 21 nearby odor sources.
+2025-06-13 00:08:38,734 - root - INFO - Query processing completed successfully.
+2025-06-13 00:18:56,875 - root - INFO - Loading knowledge base artifacts.
+2025-06-13 00:18:56,913 - root - INFO - Artifacts loaded successfully.
+2025-06-13 00:18:56,913 - root - INFO - Geocoding location: gota
+2025-06-13 00:18:57,949 - root - INFO - Location found: (23.1010002, 72.5408363)
+2025-06-13 00:18:57,949 - root - INFO - Identifying nearby odor sources.
+2025-06-13 00:18:58,179 - root - INFO - Found 15 nearby odor sources.
+2025-06-13 00:18:58,193 - root - INFO - Query processing completed successfully.
+2025-06-13 00:19:44,117 - root - INFO - SpaCy language model loaded successfully.
+2025-06-13 00:19:56,393 - root - INFO - Extracting location from user query: odour in bodakdev
+2025-06-13 00:19:56,430 - root - WARNING - No location entity found in the query.
+2025-06-13 00:20:06,142 - root - INFO - SpaCy language model loaded successfully.
+2025-06-13 00:20:13,027 - root - INFO - Extracting location from user query: odour in gota
+2025-06-13 00:20:13,044 - root - WARNING - No location entity found in the query.
+2025-06-13 00:20:21,216 - root - INFO - SpaCy language model loaded successfully.
+2025-06-13 00:20:33,195 - root - INFO - Extracting location from user query: odour in sindhu bhavan
+2025-06-13 00:20:33,211 - root - WARNING - No location entity found in the query.
+2025-06-13 00:20:40,765 - root - INFO - SpaCy language model loaded successfully.
+2025-06-13 00:20:57,029 - root - INFO - Extracting location from user query: odour in bopal
+2025-06-13 00:20:57,052 - root - WARNING - No location entity found in the query.
+2025-06-13 00:22:27,061 - root - INFO - SpaCy language model loaded successfully.
+2025-06-13 00:22:36,071 - root - INFO - Extracting location from user query: Show me odor sources near bopal
+2025-06-13 00:22:36,124 - root - WARNING - No location entity found in the query.
+2025-06-13 00:22:44,814 - root - INFO - SpaCy language model loaded successfully.
+2025-06-13 00:22:47,587 - root - INFO - Extracting location from user query: Show me odor sources near Ahmedabad
+2025-06-13 00:22:47,614 - root - INFO - Location extracted: Ahmedabad
+2025-06-13 00:26:44,966 - root - INFO - QueryExtractor initialized with SpaCy NER and Ahmedabad area list.
+2025-06-13 00:26:56,015 - root - INFO - Extracting location from user query: odour in bodakdev
+2025-06-13 00:26:56,048 - root - WARNING - No location entity found via NER or area matching.
+2025-06-13 00:27:03,919 - root - INFO - QueryExtractor initialized with SpaCy NER and Ahmedabad area list.
+2025-06-13 00:27:16,359 - root - INFO - Extracting location from user query: odour in sindhu bhavan
+2025-06-13 00:27:16,374 - root - WARNING - No location entity found via NER or area matching.
+2025-06-13 00:27:24,413 - root - INFO - QueryExtractor initialized with SpaCy NER and Ahmedabad area list.
+2025-06-13 00:27:32,110 - root - INFO - Extracting location from user query: odour in gota
+2025-06-13 00:27:32,130 - root - INFO - Location matched from Ahmedabad area list: Gota
+2025-06-13 00:27:39,593 - root - INFO - QueryExtractor initialized with SpaCy NER and Ahmedabad area list.
+2025-06-13 00:27:48,210 - root - INFO - Extracting location from user query: odour in sindhubhavan
+2025-06-13 00:27:48,227 - root - WARNING - No location entity found via NER or area matching.
+2025-06-13 00:28:17,615 - root - INFO - QueryExtractor initialized with SpaCy NER and Ahmedabad area list.
+2025-06-13 00:28:28,385 - root - INFO - Extracting location from user query: smell in vastrapur
+2025-06-13 00:28:28,412 - root - INFO - Location matched from Ahmedabad area list: Vastrapur
+2025-06-13 00:28:36,611 - root - INFO - QueryExtractor initialized with SpaCy NER and Ahmedabad area list.
+2025-06-13 00:28:50,803 - root - INFO - Extracting location from user query: smell in vastral
+2025-06-13 00:28:50,825 - root - WARNING - No location entity found via NER or area matching.
+2025-06-13 00:28:59,174 - root - INFO - QueryExtractor initialized with SpaCy NER and Ahmedabad area list.
+2025-06-13 00:29:05,763 - root - INFO - Extracting location from user query: odour in vatava
+2025-06-13 00:29:05,782 - root - WARNING - No location entity found via NER or area matching.
+2025-06-13 00:29:13,152 - root - INFO - QueryExtractor initialized with SpaCy NER and Ahmedabad area list.
+2025-06-13 00:29:18,220 - root - INFO - Extracting location from user query: odour in naroda
+2025-06-13 00:29:18,232 - root - WARNING - No location entity found via NER or area matching.
+2025-06-13 00:29:28,605 - root - INFO - QueryExtractor initialized with SpaCy NER and Ahmedabad area list.
+2025-06-13 00:29:35,041 - root - INFO - Extracting location from user query: odour in narol
+2025-06-13 00:29:35,065 - root - WARNING - No location entity found via NER or area matching.
+2025-06-13 00:29:51,164 - root - INFO - QueryExtractor initialized with SpaCy NER and Ahmedabad area list.
+2025-06-13 00:30:16,836 - root - INFO - Extracting location from user query: smell in SindhuBhavan
+2025-06-13 00:30:16,850 - root - WARNING - No location entity found via NER or area matching.
+2025-06-13 00:34:40,701 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 00:34:55,032 - root - INFO - Extracting location from user query: odour in Sindhu Bhavan
+2025-06-13 00:34:55,078 - root - WARNING - No location found via GeoText, NER, or Ahmedabad list.
+2025-06-13 00:35:03,790 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 00:35:15,868 - root - INFO - Extracting location from user query: odour in SindhuBhavan
+2025-06-13 00:35:15,882 - root - WARNING - No location found via GeoText, NER, or Ahmedabad list.
+2025-06-13 00:35:23,673 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 00:36:00,782 - root - INFO - Extracting location from user query: odour in vatava
+2025-06-13 00:36:00,833 - root - WARNING - No location found via GeoText, NER, or Ahmedabad list.
+2025-06-13 00:36:11,630 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 00:36:21,110 - root - INFO - Extracting location from user query: odour in odhav
+2025-06-13 00:36:21,132 - root - WARNING - No location found via GeoText, NER, or Ahmedabad list.
+2025-06-13 00:36:28,475 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 00:36:33,945 - root - INFO - Extracting location from user query: odour in boadakdev
+2025-06-13 00:36:33,975 - root - WARNING - No location found via GeoText, NER, or Ahmedabad list.
+2025-06-13 00:36:42,116 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 00:36:54,295 - root - INFO - Extracting location from user query: odour in vasna
+2025-06-13 00:36:54,315 - root - INFO - Location matched from Ahmedabad list: Vasna
+2025-06-13 01:14:12,075 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 01:14:21,742 - root - INFO - Extracting location from user query: odour in ranip
+2025-06-13 01:14:21,771 - root - INFO - Location matched from Ahmedabad list: Ranip
+2025-06-13 01:14:29,638 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 01:14:39,070 - root - INFO - Extracting location from user query: odour in sindubhavan
+2025-06-13 01:14:39,091 - root - WARNING - No location found via GeoText, NER, or Ahmedabad list.
+2025-06-13 01:15:01,710 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 01:15:11,135 - root - INFO - Extracting location from user query: odour in sindhubhavan
+2025-06-13 01:15:11,153 - root - INFO - Location matched from Ahmedabad list: SindhuBhavan
+2025-06-13 01:37:44,422 - root - INFO - Loading data from artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-13 01:37:44,443 - root - INFO - Data loaded successfully.
+2025-06-13 01:37:44,443 - root - INFO - Preprocessing text data for TF-IDF vectorization.
+2025-06-13 01:37:44,471 - root - INFO - Text preprocessing completed.
+2025-06-13 01:37:44,471 - root - INFO - Generating TF-IDF matrix.
+2025-06-13 01:37:44,487 - root - INFO - TF-IDF vectorizer saved at artifacts\tfidf_vectorizer.pkl.
+2025-06-13 01:37:44,489 - root - INFO - TF-IDF feature matrix saved at artifacts\feature_matrix.pkl.
+2025-06-13 01:37:44,489 - root - INFO - Knowledge base preparation completed successfully.
+2025-06-13 01:38:11,851 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 01:38:18,844 - root - INFO - Extracting location from user query: odour in thaltej
+2025-06-13 01:38:18,889 - root - INFO - Location matched from Ahmedabad list: Thaltej
