@@ -2,3 +2,4 @@ setuptools
 geopandas
 pandas
 shapely
+scikit-learn

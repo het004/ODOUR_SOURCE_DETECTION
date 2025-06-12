@@ -17,3 +17,11 @@
 2  ICD Khodiyar depot  Polygon                          {"landuse": "industrial"}  23.165492  72.549443  638732.197203
 3                None  Polygon                          {"landuse": "industrial"}  22.973104  72.559483   14032.095402
 4   Wonder Industries  Polygon  {"landuse": "industrial", "industrial": "manuf...  22.755604  72.335554   51901.426435
+2025-06-12 22:36:06,605 - root - INFO - Loading data from artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-12 22:36:06,631 - root - INFO - Data loaded successfully.
+2025-06-12 22:36:06,631 - root - INFO - Preprocessing text data for TF-IDF vectorization.
+2025-06-12 22:36:06,655 - root - INFO - Text preprocessing completed.
+2025-06-12 22:36:06,655 - root - INFO - Generating TF-IDF matrix.
+2025-06-12 22:36:06,664 - root - INFO - TF-IDF vectorizer saved at artifacts\tfidf_vectorizer.pkl.
+2025-06-12 22:36:06,664 - root - INFO - TF-IDF feature matrix saved at artifacts\feature_matrix.pkl.
+2025-06-12 22:36:06,664 - root - INFO - Knowledge base preparation completed successfully.
