@@ -4,3 +4,16 @@
 2025-06-12 19:53:19,898 - root - INFO - Read the datasets as geopanda dataframe
 2025-06-12 19:53:20,150 - pyogrio._io - INFO - Created 419 records
 2025-06-12 19:53:20,151 - root - INFO - Ingestion is completed
+2025-06-12 22:26:13,275 - root - INFO - Entered the data ingestion method or component to load a GeoJSON file into a GeoDataFrame.
+2025-06-12 22:26:13,689 - root - INFO - Read the datasets as geopandas GeoDataFrame.
+2025-06-12 22:26:13,820 - pyogrio._io - INFO - Created 419 records
+2025-06-12 22:26:13,821 - root - INFO - Ingestion is completed.
+2025-06-12 22:26:13,821 - root - INFO - Started processing of GeoJSON data.
+2025-06-12 22:26:15,043 - root - INFO - Data has been processed and saved to artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-12 22:26:15,059 - root - INFO - First 5 rows of processed data:
+                 name     type                                               tags   latitude  longitude        area_m2
+0                None  Polygon                          {"landuse": "industrial"}  22.823841  72.600146  195795.400294
+1               AMGEN  Polygon  {"landuse": "industrial", "power": "plant", "p...  23.071507  72.593289  437670.283740
+2  ICD Khodiyar depot  Polygon                          {"landuse": "industrial"}  23.165492  72.549443  638732.197203
+3                None  Polygon                          {"landuse": "industrial"}  22.973104  72.559483   14032.095402
+4   Wonder Industries  Polygon  {"landuse": "industrial", "industrial": "manuf...  22.755604  72.335554   51901.426435
