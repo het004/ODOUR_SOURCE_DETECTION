@@ -125,3 +125,59 @@
 2025-06-13 01:38:11,851 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
 2025-06-13 01:38:18,844 - root - INFO - Extracting location from user query: odour in thaltej
 2025-06-13 01:38:18,889 - root - INFO - Location matched from Ahmedabad list: Thaltej
+2025-06-13 11:01:51,945 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 11:01:52,126 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-13 11:02:14,589 - root - INFO - Processing query: odour in bodakdev
+2025-06-13 11:02:14,589 - root - INFO - Extracting location from user query: odour in bodakdev
+2025-06-13 11:02:14,640 - root - INFO - Location matched from Ahmedabad list: Bodakdev
+2025-06-13 11:02:14,641 - root - INFO - Geocoding location: Bodakdev
+2025-06-13 11:02:15,819 - root - INFO - Geocoded Bodakdev to (23.0445921, 72.517344)
+2025-06-13 11:02:15,820 - root - INFO - Finding odor sources near (23.0445921, 72.517344)
+2025-06-13 11:02:15,923 - root - INFO - Filtering odor sources based on tags and query similarity.
+2025-06-13 11:02:15,945 - root - INFO - Found 1 odor sources for query: odour in bodakdev
+2025-06-13 11:03:00,925 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 11:03:00,988 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-13 11:03:09,350 - root - INFO - Processing query: odour in bodakdev
+2025-06-13 11:03:09,350 - root - INFO - Extracting location from user query: odour in bodakdev
+2025-06-13 11:03:09,366 - root - INFO - Location matched from Ahmedabad list: Bodakdev
+2025-06-13 11:03:09,366 - root - INFO - Geocoding location: Bodakdev
+2025-06-13 11:03:10,341 - root - INFO - Geocoded Bodakdev to (23.0445921, 72.517344)
+2025-06-13 11:03:10,342 - root - INFO - Finding odor sources near (23.0445921, 72.517344)
+2025-06-13 11:03:10,385 - root - INFO - Filtering odor sources based on tags and query similarity.
+2025-06-13 11:03:10,437 - root - INFO - Found 18 odor sources for query: odour in bodakdev
+2025-06-13 11:03:53,857 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 11:03:53,930 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-13 11:04:03,403 - root - INFO - Processing query: smell in navrangpura
+2025-06-13 11:04:03,404 - root - INFO - Extracting location from user query: smell in navrangpura
+2025-06-13 11:04:03,419 - root - INFO - Location extracted using SpaCy NER: navrangpura
+2025-06-13 11:04:03,419 - root - INFO - Geocoding location: navrangpura
+2025-06-13 11:04:04,409 - root - INFO - Geocoded navrangpura to (23.0359998, 72.5643429)
+2025-06-13 11:04:04,409 - root - INFO - Finding odor sources near (23.0359998, 72.5643429)
+2025-06-13 11:04:04,451 - root - INFO - Filtering odor sources based on tags and query similarity.
+2025-06-13 11:04:04,465 - root - INFO - Found 34 odor sources for query: smell in navrangpura
+2025-06-13 11:04:26,410 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 11:04:26,474 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-13 11:04:37,425 - root - INFO - Processing query: odour in vatava
+2025-06-13 11:04:37,425 - root - INFO - Extracting location from user query: odour in vatava
+2025-06-13 11:04:37,443 - root - WARNING - No location found via GeoText, NER, or Ahmedabad list.
+2025-06-13 11:04:37,443 - root - WARNING - No location extracted from query.
+2025-06-13 11:04:53,748 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 11:04:53,817 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-13 11:05:04,480 - root - INFO - Processing query: odour in bopal
+2025-06-13 11:05:04,481 - root - INFO - Extracting location from user query: odour in bopal
+2025-06-13 11:05:04,501 - root - INFO - Location matched from Ahmedabad list: Bopal
+2025-06-13 11:05:04,501 - root - INFO - Geocoding location: Bopal
+2025-06-13 11:05:05,338 - root - INFO - Geocoded Bopal to (23.0235385, 72.470527)
+2025-06-13 11:05:05,338 - root - INFO - Finding odor sources near (23.0235385, 72.470527)
+2025-06-13 11:05:05,365 - root - INFO - Filtering odor sources based on tags and query similarity.
+2025-06-13 11:05:05,375 - root - INFO - Found 7 odor sources for query: odour in bopal
+2025-06-13 11:06:14,740 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 11:06:14,817 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-13 11:06:26,093 - root - INFO - Processing query: odor in vatva
+2025-06-13 11:06:26,093 - root - INFO - Extracting location from user query: odor in vatva
+2025-06-13 11:06:26,110 - root - INFO - Location matched from Ahmedabad list: Vatva
+2025-06-13 11:06:26,111 - root - INFO - Geocoding location: Vatva
+2025-06-13 11:06:27,056 - root - INFO - Geocoded Vatva to (22.9589978, 72.6297981)
+2025-06-13 11:06:27,056 - root - INFO - Finding odor sources near (22.9589978, 72.6297981)
+2025-06-13 11:06:27,089 - root - INFO - Filtering odor sources based on tags and query similarity.
+2025-06-13 11:06:27,108 - root - INFO - Found 15 odor sources for query: odor in vatva
