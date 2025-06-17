@@ -1,8 +1,8 @@
-To help the user identify potential odor sources in Ahmedabad, India based on their query "odor in Bodakdev," the following summary was provided:
+In Ahmedabad, India, based on query "odor in ranip" and extracted location "Ranip", the following potential odor sources were found:
 
-- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 504.18 meters
-- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 1406.24 meters
-- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 1735.35 meters
-- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 1795.26 meters
-- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 1808.23 meters
-- Name: Unknown, Type: Polygon, Tags
+- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 810.17 meters
+- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 929.55 meters
+- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 1151.85 meters
+- Name: Unknown, Type: Polygon, Tags: landuse: industrial, industrial: depot, Distance: 1352.38 meters
+- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 1427.86 meters
+- Name: Unknown
