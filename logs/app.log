@@ -181,3 +181,49 @@
 2025-06-13 11:06:27,056 - root - INFO - Finding odor sources near (22.9589978, 72.6297981)
 2025-06-13 11:06:27,089 - root - INFO - Filtering odor sources based on tags and query similarity.
 2025-06-13 11:06:27,108 - root - INFO - Found 15 odor sources for query: odor in vatva
+2025-06-13 11:14:07,285 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 11:14:07,382 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-13 11:14:29,316 - root - INFO - Processing query: odor in navrangpura
+2025-06-13 11:14:29,317 - root - INFO - Extracting location from user query: odor in navrangpura
+2025-06-13 11:14:29,348 - root - INFO - Location extracted using SpaCy NER: navrangpura
+2025-06-13 11:14:29,348 - root - INFO - Geocoding location: navrangpura
+2025-06-13 11:14:29,354 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002880AA82090>: Failed to resolve 'nominatim.openstreetmap.org' ([Errno 11001] getaddrinfo failed)")': /search?q=navrangpura%2C+Ahmedabad%2C+India&format=json&limit=1
+2025-06-13 11:14:29,356 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002880AA969C0>: Failed to resolve 'nominatim.openstreetmap.org' ([Errno 11001] getaddrinfo failed)")': /search?q=navrangpura%2C+Ahmedabad%2C+India&format=json&limit=1
+2025-06-13 11:14:49,902 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 11:14:49,969 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-13 11:15:00,543 - root - INFO - Processing query: odor in navrangpura
+2025-06-13 11:15:00,544 - root - INFO - Extracting location from user query: odor in navrangpura
+2025-06-13 11:15:00,560 - root - INFO - Location extracted using SpaCy NER: navrangpura
+2025-06-13 11:15:00,560 - root - INFO - Geocoding location: navrangpura
+2025-06-13 11:15:11,828 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000014B76CF5340>: Failed to resolve 'nominatim.openstreetmap.org' ([Errno 11001] getaddrinfo failed)")': /search?q=navrangpura%2C+Ahmedabad%2C+India&format=json&limit=1
+2025-06-13 11:15:11,830 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000014B76C96E40>: Failed to resolve 'nominatim.openstreetmap.org' ([Errno 11001] getaddrinfo failed)")': /search?q=navrangpura%2C+Ahmedabad%2C+India&format=json&limit=1
+2025-06-13 11:15:46,554 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 11:15:46,616 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-13 11:15:55,551 - root - INFO - Processing query: smell in bodakdev
+2025-06-13 11:15:55,551 - root - INFO - Extracting location from user query: smell in bodakdev
+2025-06-13 11:15:55,568 - root - INFO - Location matched from Ahmedabad list: Bodakdev
+2025-06-13 11:15:55,570 - root - INFO - Geocoding location: Bodakdev
+2025-06-13 11:15:56,515 - root - INFO - Geocoded Bodakdev to (23.0445921, 72.517344)
+2025-06-13 11:15:56,515 - root - INFO - Finding odor sources near (23.0445921, 72.517344)
+2025-06-13 11:15:56,603 - root - INFO - Filtering odor sources based on tags and query similarity.
+2025-06-13 11:15:56,627 - root - INFO - Found 18 odor sources for query: smell in bodakdev
+2025-06-13 11:16:19,156 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 11:16:19,237 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-13 11:16:26,222 - root - INFO - Processing query: smell in vatva
+2025-06-13 11:16:26,222 - root - INFO - Extracting location from user query: smell in vatva
+2025-06-13 11:16:26,238 - root - INFO - Location matched from Ahmedabad list: Vatva
+2025-06-13 11:16:26,239 - root - INFO - Geocoding location: Vatva
+2025-06-13 11:16:27,248 - root - INFO - Geocoded Vatva to (22.9589978, 72.6297981)
+2025-06-13 11:16:27,248 - root - INFO - Finding odor sources near (22.9589978, 72.6297981)
+2025-06-13 11:16:27,283 - root - INFO - Filtering odor sources based on tags and query similarity.
+2025-06-13 11:16:27,296 - root - INFO - Found 15 odor sources for query: smell in vatva
+2025-06-13 11:16:55,527 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-13 11:16:55,592 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-13 11:17:07,501 - root - INFO - Processing query: smell in navrangpura
+2025-06-13 11:17:07,501 - root - INFO - Extracting location from user query: smell in navrangpura
+2025-06-13 11:17:07,515 - root - INFO - Location extracted using SpaCy NER: navrangpura
+2025-06-13 11:17:07,516 - root - INFO - Geocoding location: navrangpura
+2025-06-13 11:17:08,402 - root - INFO - Geocoded navrangpura to (23.0359998, 72.5643429)
+2025-06-13 11:17:08,403 - root - INFO - Finding odor sources near (23.0359998, 72.5643429)
+2025-06-13 11:17:08,449 - root - INFO - Filtering odor sources based on tags and query similarity.
+2025-06-13 11:17:08,466 - root - INFO - Found 34 odor sources for query: smell in navrangpura
