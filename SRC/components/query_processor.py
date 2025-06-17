@@ -34,6 +34,7 @@ class QueryProcessor:
                 self.feature_matrix = pickle.load(f)
             logging.info("QueryProcessor initialized with knowledge base artifacts.")
         except Exception as e:
+            logging.error(f"QueryProcessor initialization failed: {str(e)}")
             raise CustomException(e, sys)
 
     def geocode_location(self, location: str) -> Optional[Dict[str, float]]:
@@ -47,6 +48,7 @@ class QueryProcessor:
             logging.warning(f"No coordinates found for location: {location}")
             return None
         except Exception as e:
+            logging.error(f"Geocoding failed for location {location}: {str(e)}")
             raise CustomException(e, sys)
 
     def find_nearby_sources(self, latitude: float, longitude: float) -> gpd.GeoDataFrame:
@@ -66,21 +68,26 @@ class QueryProcessor:
             # Create buffer (search radius in meters)
             buffer = query_point_utm.buffer(self.config.search_radius_m)
             # Find sources within buffer
-            nearby_sources = gdf_utm[gdf_utm.geometry.intersects(buffer.iloc[0])]
+            nearby_sources = gdf_utm[gdf_utm.geometry.intersects(buffer.iloc[0])].copy()
             # Convert back to lat/lon for output
             nearby_sources = nearby_sources.to_crs("EPSG:4326")
             # Calculate distances in meters
-            nearby_sources['distance_m'] = nearby_sources.geometry.apply(
-                lambda geom: query_point_utm.distance(gpd.GeoSeries([geom], crs="EPSG:32643")).iloc[0]
-            )
+            if not nearby_sources.empty:
+                nearby_sources.loc[:, 'distance_m'] = nearby_sources.geometry.apply(
+                    lambda geom: query_point_utm.distance(gpd.GeoSeries([geom], crs="EPSG:32643")).iloc[0]
+                )
+                logging.info(f"Found {len(nearby_sources)} odor sources within {self.config.search_radius_m}m")
+            else:
+                logging.info("No odor sources found within search radius")
             return nearby_sources
         except Exception as e:
+            logging.error(f"Finding nearby sources failed: {str(e)}")
             raise CustomException(e, sys)
 
     def filter_odor_sources(self, gdf: gpd.GeoDataFrame, query: str) -> gpd.GeoDataFrame:
         """Filter sources based on odor-related keywords and query similarity."""
         try:
-            logging.info("Filtering odor sources based on tags and query similarity.")
+            logging.info("Filtering odor sources based on tags and query similarity")
             # Odor-related tags (e.g., landfill, waste, industrial)
             odor_keywords = [
                 "landfill", "waste", "industrial", "sewage", "dump", "garbage",
@@ -94,21 +101,28 @@ class QueryProcessor:
                     return False
 
             # Filter sources with odor-related tags
-            odor_sources = gdf[gdf['tags'].apply(is_odor_source)]
+            odor_sources = gdf[gdf['tags'].apply(is_odor_source)].copy()
 
             # Further refine using TF-IDF similarity
-            if not query:
+            if not query or odor_sources.empty:
+                logging.info(f"No query or no odor sources to filter, returning {len(odor_sources)} sources")
                 return odor_sources
 
             # Transform query to TF-IDF vector
+            logging.debug("Computing TF-IDF similarity for query")
             query_vector = self.vectorizer.transform([query])
             similarities = cosine_similarity(query_vector, self.feature_matrix).flatten()
             # Add similarity scores to DataFrame
-            odor_sources['similarity'] = similarities[odor_sources.index]
-            # Sort by similarity and distance
-            odor_sources = odor_sources.sort_values(by=['similarity', 'distance_m'], ascending=[False, True])
+            if not odor_sources.empty:
+                odor_sources.loc[:, 'similarity'] = similarities[odor_sources.index]
+                # Sort by similarity and distance
+                odor_sources = odor_sources.sort_values(by=['similarity', 'distance_m'], ascending=[False, True])
+                logging.info(f"Filtered and sorted {len(odor_sources)} odor sources by similarity and distance")
+            else:
+                logging.info("No odor sources after filtering")
             return odor_sources
         except Exception as e:
+            logging.error(f"Odor source filtering failed: {str(e)}")
             raise CustomException(e, sys)
 
     def process_query(self, query: str) -> List[Dict]:
@@ -118,7 +132,7 @@ class QueryProcessor:
             # Step 1: Extract location
             location = self.extractor.extract_location(query)
             if not location:
-                logging.warning("No location extracted from query.")
+                logging.warning("No location extracted from query")
                 return []
 
             # Step 2: Geocode location
@@ -130,13 +144,13 @@ class QueryProcessor:
             # Step 3: Find nearby sources
             nearby_sources = self.find_nearby_sources(coords['latitude'], coords['longitude'])
             if nearby_sources.empty:
-                logging.info("No odor sources found within search radius.")
+                logging.info("No odor sources found within search radius")
                 return []
 
             # Step 4: Filter odor-relevant sources
             odor_sources = self.filter_odor_sources(nearby_sources, query)
             if odor_sources.empty:
-                logging.info("No odor-relevant sources found after filtering.")
+                logging.info("No odor-relevant sources found after filtering")
                 return []
 
             # Step 5: Format output
@@ -152,24 +166,31 @@ class QueryProcessor:
                     "distance_m": row['distance_m'],
                     "similarity": row.get('similarity', 0.0)
                 })
-
-            logging.info(f"Found {len(results)} odor sources for query: {query}")
+            logging.info(f"Processed query, found {len(results)} odor sources")
             return results
         except Exception as e:
+            logging.error(f"Query processing failed: {str(e)}")
             raise CustomException(e, sys)
 
 if __name__ == "__main__":
-    processor = QueryProcessor()
-    query = input("Enter your query (e.g., 'odor in Navrangpura'): ")
-    results = processor.process_query(query)
-    if results:
-        print("\nPotential Odor Sources:")
-        for result in results:
-            print(f"- Name: {result['name']}")
-            print(f"  Type: {result['type']}")
-            print(f"  Tags: {result['tags']}")
-            print(f"  Location: ({result['latitude']}, {result['longitude']})")
-            print(f"  Distance: {result['distance_m']:.2f} meters")
-            print(f"  Similarity: {result['similarity']:.4f}\n")
-    else:
-        print("No odor sources found for the query.")
+    try:
+        logging.info("Starting QueryProcessor test via console interface")
+        processor = QueryProcessor()
+        query = input("Enter your query (e.g., 'odor in Navrangpura'): ")
+        results = processor.process_query(query)
+        if results:
+            logging.info("Displaying query results")
+            print("\nPotential Odor Sources:")
+            for result in results:
+                print(f"- Name: {result['name']}")
+                print(f"  Type: {result['type']}")
+                print(f"  Tags: {result['tags']}")
+                print(f"  Location: ({result['latitude']}, {result['longitude']})")
+                print(f"  Distance: {result['distance_m']:.2f} meters")
+                print(f"  Similarity: {result['similarity']:.4f}\n")
+        else:
+            print("No odor sources found.")
+            logging.info("No odor sources found for query")
+    except Exception as e:
+        logging.error(f"Test execution failed: {str(e)}")
+        print(f"Error: {str(e)}")
