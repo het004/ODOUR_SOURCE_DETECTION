@@ -2,7 +2,7 @@ import os
 import sys
 from typing import List, Dict
 from dataclasses import dataclass
-from langchain_community.llms import Ollama
+from langchain_community.llms import Ollama  # Revert to deprecated Ollama class
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from SRC.exception import CustomException
@@ -28,10 +28,10 @@ class ResponseGenerator:
             # Verify LangChain tracing setup
             if not os.getenv("LANGCHAIN_API_KEY"):
                 logging.warning("LANGCHAIN_API_KEY not set. Tracing will not work.")
-            # Initialize Ollama with Mistral model
+            # Initialize Ollama with the deprecated Ollama class
             self.llm = Ollama(
                 model=self.config.model_name,
-                base_url="http://localhost:11434",  # Default Ollama endpoint
+                base_url="http://localhost:11434",
                 num_predict=self.config.max_response_length,
                 temperature=0.7,
                 top_p=0.9
@@ -70,7 +70,7 @@ Summarize these findings, including the location and relevant details (e.g., sou
             raise CustomException(e, sys)
 
     def generate_response(self, query: str, location: str, sources: List[Dict]) -> str:
-        """Generate a natural language response using Ollama's Mistral model and LangChain."""
+        """Generate a natural language response using Ollama's model and LangChain."""
         try:
             logging.info(f"Generating response for query: {query}, location: {location}")
             formatted_sources = self.format_sources(sources)
@@ -92,7 +92,7 @@ Summarize these findings, including the location and relevant details (e.g., sou
             raise CustomException(e, sys)
 
 if __name__ == "__main__":
-    from query_processor import QueryProcessor
+    from SRC.components.query_processor import QueryProcessor
     # Test the response generator
     processor = QueryProcessor()
     generator = ResponseGenerator()
