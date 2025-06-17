@@ -12,8 +12,8 @@ Requires-Dist: geopy==2.4.1
 Requires-Dist: spacy==3.7.6
 Requires-Dist: en-core-web-sm@ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
 Requires-Dist: geotext==0.4.0
-Requires-Dist: langchain-community==0.3.1
-Requires-Dist: langchain-core==0.3.6
+Requires-Dist: langchain_community
+Requires-Dist: langchain_core
 Requires-Dist: streamlit
 Dynamic: author
 Dynamic: author-email

@@ -1035,3 +1035,21 @@
 2025-06-17 14:22:14,672 - root - INFO - Processed query, found 27 odor sources
 2025-06-17 14:22:14,672 - root - INFO - Extracting location from user query: odor in ranip
 2025-06-17 14:22:14,681 - root - INFO - Location matched from Ahmedabad list: Ranip
+2025-06-17 15:31:15,322 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-17 15:31:15,453 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-17 15:31:15,453 - root - INFO - Initializing ResponseGenerator with Ollama model tinyllama
+2025-06-17 15:31:15,454 - root - ERROR - Pipeline initialization failed: Error occured in python script name [C:\Internship_oizom_project\ODOUR_SOURCE_DETECTION\SRC\components\response_generator.py] line number [32] error message[`Ollama` is not fully defined; you should define `BaseCache`, then call `Ollama.model_rebuild()`.
+
+For further information visit https://errors.pydantic.dev/2.11/u/class-not-fully-defined]
+2025-06-17 15:33:33,718 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-17 15:33:33,773 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-17 15:33:33,773 - root - INFO - Initializing ResponseGenerator with Ollama model tinyllama
+2025-06-17 15:33:33,775 - root - ERROR - Pipeline initialization failed: Error occured in python script name [C:\Internship_oizom_project\ODOUR_SOURCE_DETECTION\SRC\components\response_generator.py] line number [32] error message[`Ollama` is not fully defined; you should define `BaseCache`, then call `Ollama.model_rebuild()`.
+
+For further information visit https://errors.pydantic.dev/2.11/u/class-not-fully-defined]
+2025-06-17 15:33:35,869 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-17 15:33:35,923 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-17 15:33:35,923 - root - INFO - Initializing ResponseGenerator with Ollama model tinyllama
+2025-06-17 15:33:35,924 - root - ERROR - Pipeline initialization failed: Error occured in python script name [C:\Internship_oizom_project\ODOUR_SOURCE_DETECTION\SRC\components\response_generator.py] line number [32] error message[`Ollama` is not fully defined; you should define `BaseCache`, then call `Ollama.model_rebuild()`.
+
+For further information visit https://errors.pydantic.dev/2.11/u/class-not-fully-defined]
