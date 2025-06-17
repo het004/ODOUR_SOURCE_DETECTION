@@ -1,0 +1,8 @@
+Based on the query "odor in VaTVa," a summary of potential odor sources can be provided as follows:
+
+- The following potential odor sources were found:
+  - Name: VaTVA GIDC, Type: Polygon, Tags: landuse: industrial, Distance: 2553873.70 meters
+  - Name: VaTVA GiDC, Type: Polygon, Tags: landuse: industrial, Distance: 2553873.68 meters
+  - Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 2553873.68 meters
+  - Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 2553873.69 meters
+  - Name: Unknown, Type: Polygon, Tags

@@ -17,7 +17,7 @@ os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
 @dataclass
 class ResponseGeneratorConfig:
     output_response_path: str = os.path.join('artifacts', 'generated_response.txt')
-    model_name: str = "mistral"  # Ollama model name
+    model_name: str = "tinyllama"  # Ollama model name
     max_response_length: int = 200  # Max tokens for generated response
 
 class ResponseGenerator:
