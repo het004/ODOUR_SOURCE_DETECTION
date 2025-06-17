@@ -227,3 +227,18 @@
 2025-06-13 11:17:08,403 - root - INFO - Finding odor sources near (23.0359998, 72.5643429)
 2025-06-13 11:17:08,449 - root - INFO - Filtering odor sources based on tags and query similarity.
 2025-06-13 11:17:08,466 - root - INFO - Found 34 odor sources for query: smell in navrangpura
+2025-06-17 10:40:36,316 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-17 10:40:36,484 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-17 10:40:36,484 - root - INFO - Initializing ResponseGenerator with Ollama model mistral
+2025-06-17 10:40:36,505 - root - INFO - ResponseGenerator initialized successfully.
+2025-06-17 10:40:48,558 - root - INFO - Processing query: odor in navrangpura
+2025-06-17 10:40:48,558 - root - INFO - Extracting location from user query: odor in navrangpura
+2025-06-17 10:40:48,600 - root - INFO - Location extracted using SpaCy NER: navrangpura
+2025-06-17 10:40:48,600 - root - INFO - Geocoding location: navrangpura
+2025-06-17 10:40:49,608 - root - INFO - Geocoded navrangpura to (23.0359998, 72.5643429)
+2025-06-17 10:40:49,608 - root - INFO - Finding odor sources near (23.0359998, 72.5643429)
+2025-06-17 10:40:49,704 - root - INFO - Filtering odor sources based on tags and query similarity.
+2025-06-17 10:40:49,757 - root - INFO - Found 34 odor sources for query: odor in navrangpura
+2025-06-17 10:40:49,757 - root - INFO - Extracting location from user query: odor in navrangpura
+2025-06-17 10:40:49,768 - root - INFO - Location extracted using SpaCy NER: navrangpura
+2025-06-17 10:40:49,769 - root - INFO - Generating response for query: odor in navrangpura, location: navrangpura
