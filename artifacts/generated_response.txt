@@ -1,6 +1,8 @@
-Human: Based on the query "odor in VaTVA" and the extracted location "Vatva", I have researched and found potential odor sources within a 747.28-meter distance of Vatva GiDC. The following are the names, types, and distances for each source:
+To help the user identify potential odor sources in Ahmedabad, India based on their query "odor in Bodakdev," the following summary was provided:
 
-Name: VaTVA GIDC, Type: Polygon, Tags: landuse: industrial, Distance: 1115.36 meters
-Name: JM Zhongkai Chemical Equipment LLP, Type: Point, Tags: man_made: works, Operator: JM Zhongkai Chemical Equipment LLP, Distance: 903.74 meters
-Name: VaTVA Industrial Estate, Type: Point, Tags: landuse: industrial, Distance: 1299.53 meters
-Name: Unknown, Type:
+- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 504.18 meters
+- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 1406.24 meters
+- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 1735.35 meters
+- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 1795.26 meters
+- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 1808.23 meters
+- Name: Unknown, Type: Polygon, Tags
