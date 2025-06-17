@@ -14,7 +14,7 @@ Requires-Dist: en-core-web-sm@ https://github.com/explosion/spacy-models/release
 Requires-Dist: geotext==0.4.0
 Requires-Dist: langchain-community==0.3.1
 Requires-Dist: langchain-core==0.3.6
-Requires-Dist: streamlit==1.39.0
+Requires-Dist: streamlit
 Dynamic: author
 Dynamic: author-email
 Dynamic: requires-dist
