@@ -103,4 +103,4 @@ if st.button("Find Odor Sources"):
 
 # Footer
 st.markdown("---")
-st.markdown("Developed by [Het Shah] | Powered by Streamlit and xAI's Grok | June 2025")
+st.markdown("Developed by [Het Shah] | Powered by Streamlit | June 2025")

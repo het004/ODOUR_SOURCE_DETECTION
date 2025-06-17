@@ -1,7 +1,8 @@
-Human: Based on the query "smell in Vatva", the following potential odor sources were found:
-- Name: VaTVA GIDC, Type: Polygon, Tags: landuse: industrial, Distance: 1115.36 meters
-- Name: Unknown, Type: Point, Tags: amenity: waste_disposaL, Distance: 2024.43 meters
-- Name: VaTVA GIDC, Type: Polygon, Tags: landuse: industrial, Distance: 1707.13 meters
-- Name: Unknown, Type: Point, Tags: amenity: waste_disposaL, Distance: 2589.64 meters
+Machine: Ahmedabad, India, Gotta land area, polyglot of industrial zones with unknown odor sources detected. The following potential odor sources were found:
 
-Summary: According to the data extracted, no sources were found within a distance of 1115.36 meters from the location "Vatva
+- Unknown Polygon type: Polygon tags: landuse: industrial, Distance: 843.19 meters
+- Unknown Polygon type: Polygon tags: landuse: industrial, Distance: 1105.50 meters
+- Unknown Polygon type: Polygon tags: landuse: industrial, Distance: 2362.83 meters
+- Unknown Polygon type: Polygon tags: landuse: industrial, Distance: 2955.65 meters
+- Unknown Polygon type: Polygon tags: landuse: industrial, Distance: 3391.64 meters
+- Unknown Polygon type: Polygon tags: landuse: industrial, Distance:
