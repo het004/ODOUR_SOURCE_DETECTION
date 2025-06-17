@@ -9,4 +9,5 @@ en-core-web-sm@ https://github.com/explosion/spacy-models/releases/download/en_c
 geotext==0.4.0
 langchain_community
 langchain_core
+langchain-ollama
 streamlit
