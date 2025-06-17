@@ -1,3 +1,7 @@
-AI: Based on the query "odor in bopal" and the extracted location "BoPal", we have found the following potential odor sources to help you identify any sources of unpleasant odors in this area:
+Based on the query "odor in VaTVA" and the extracted location "Vatva", we have found the following potential odor sources:
 
-No odor sourcs were identified due to a lack of information or insufficient data. The distance between BoPal and the location is not provided. However, based on general odor characteristics, we can provide some possible potential sources such as garbage, construction sites, or pets. If you have further questions or need additional information, please contact us directly at [contact info].
+Name: VaTVA GiDC, Type: Point, Tags: man_made: works, operator: VaTVA GiDC, Distance: 747.28 meters
+- Name: JM Zhongkai Chemical Equipment LLP, Type: Polygon, Tags: landuse: industrial, Distance: 903.74 meters
+- Name: VaTVA GIDC, Type: Polygon, Tags: landuse: industrial, Distance: 1115.36 meters
+- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 1707.13 meters
+- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance

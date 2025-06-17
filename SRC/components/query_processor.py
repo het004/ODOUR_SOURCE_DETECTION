@@ -7,12 +7,12 @@ from geopy.geocoders import Nominatim
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity
 import json
+from math import radians, sin, cos, sqrt, atan2
 from typing import Optional, List, Dict
 from dataclasses import dataclass
 from SRC.exception import CustomException
 from SRC.logger import logging
-from query_extractor import QueryExtractor
-
+from SRC.components.query_extractor import QueryExtractor
 @dataclass
 class QueryProcessorConfig:
     input_csv_path: str = os.path.join('artifacts', 'ahmedabad_odor_sources_cleaned.csv')
@@ -51,6 +51,15 @@ class QueryProcessor:
             logging.error(f"Geocoding failed for location {location}: {str(e)}")
             raise CustomException(e, sys)
 
+    def haversine(self, lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+        """Calculate the great-circle distance between two points in meters."""
+        R = 6371000  # Earth radius in meters
+        dlat = radians(lat2 - lat1)
+        dlon = radians(lon2 - lon1)
+        a = sin(dlat/2)**2 + cos(radians(lat1)) * cos(radians(lat2)) * sin(dlon/2)**2
+        c = 2 * atan2(sqrt(a), sqrt(1-a))
+        return R * c
+
     def find_nearby_sources(self, latitude: float, longitude: float) -> gpd.GeoDataFrame:
         """Find odor sources within the search radius of the given coordinates."""
         try:
@@ -69,16 +78,21 @@ class QueryProcessor:
             buffer = query_point_utm.buffer(self.config.search_radius_m)
             # Find sources within buffer
             nearby_sources = gdf_utm[gdf_utm.geometry.intersects(buffer.iloc[0])].copy()
-            # Convert back to lat/lon for output
-            nearby_sources = nearby_sources.to_crs("EPSG:4326")
-            # Calculate distances in meters
+            # Calculate distances in meters (UTM-based)
             if not nearby_sources.empty:
                 nearby_sources.loc[:, 'distance_m'] = nearby_sources.geometry.apply(
-                    lambda geom: query_point_utm.distance(gpd.GeoSeries([geom], crs="EPSG:32643")).iloc[0]
+                    lambda geom: query_point_utm.distance(geom)
+                )
+                # Calculate Haversine distances for comparison
+                nearby_sources.loc[:, 'distance_m_haversine'] = nearby_sources.apply(
+                    lambda row: self.haversine(latitude, longitude, row['latitude'], row['longitude']),
+                    axis=1
                 )
                 logging.info(f"Found {len(nearby_sources)} odor sources within {self.config.search_radius_m}m")
             else:
                 logging.info("No odor sources found within search radius")
+            # Convert back to lat/lon for output
+            nearby_sources = nearby_sources.to_crs("EPSG:4326")
             return nearby_sources
         except Exception as e:
             logging.error(f"Finding nearby sources failed: {str(e)}")
@@ -115,9 +129,7 @@ class QueryProcessor:
             # Add similarity scores to DataFrame
             if not odor_sources.empty:
                 odor_sources.loc[:, 'similarity'] = similarities[odor_sources.index]
-                # Sort by similarity and distance
-                odor_sources = odor_sources.sort_values(by=['similarity', 'distance_m'], ascending=[False, True])
-                logging.info(f"Filtered and sorted {len(odor_sources)} odor sources by similarity and distance")
+                logging.info(f"Filtered {len(odor_sources)} odor sources with similarity scores")
             else:
                 logging.info("No odor sources after filtering")
             return odor_sources
@@ -126,7 +138,7 @@ class QueryProcessor:
             raise CustomException(e, sys)
 
     def process_query(self, query: str) -> List[Dict]:
-        """Main method to process a user query and return nearby odor sources."""
+        """Main method to process a user query and return nearby odor sources in ascending order of distance."""
         try:
             logging.info(f"Processing query: {query}")
             # Step 1: Extract location
@@ -153,7 +165,12 @@ class QueryProcessor:
                 logging.info("No odor-relevant sources found after filtering")
                 return []
 
-            # Step 5: Format output
+            # Step 5: Reset index and sort by distance_m in ascending order
+            odor_sources = odor_sources.reset_index(drop=True)
+            odor_sources = odor_sources.sort_values(by='distance_m', ascending=True)
+            logging.info("Sorted odor sources by distance_m in ascending order")
+
+            # Step 6: Format output
             results = []
             for _, row in odor_sources.iterrows():
                 tags = json.loads(row['tags']) if pd.notna(row['tags']) else {}
@@ -164,6 +181,7 @@ class QueryProcessor:
                     "latitude": row['latitude'],
                     "longitude": row['longitude'],
                     "distance_m": row['distance_m'],
+                    "distance_m_haversine": row['distance_m_haversine'],
                     "similarity": row.get('similarity', 0.0)
                 })
             logging.info(f"Processed query, found {len(results)} odor sources")
@@ -180,13 +198,14 @@ if __name__ == "__main__":
         results = processor.process_query(query)
         if results:
             logging.info("Displaying query results")
-            print("\nPotential Odor Sources:")
+            print("\nPotential Odor Sources (sorted by distance):")
             for result in results:
                 print(f"- Name: {result['name']}")
                 print(f"  Type: {result['type']}")
                 print(f"  Tags: {result['tags']}")
                 print(f"  Location: ({result['latitude']}, {result['longitude']})")
-                print(f"  Distance: {result['distance_m']:.2f} meters")
+                print(f"  Distance (UTM): {result['distance_m']:.2f} meters")
+                print(f"  Distance (Haversine): {result['distance_m_haversine']:.2f} meters")
                 print(f"  Similarity: {result['similarity']:.4f}\n")
         else:
             print("No odor sources found.")
