@@ -1,8 +1,7 @@
-Having analyzed the available information in Ahmedabad, India, based on the query "smell in Naroda", our AI assistant has identified the following potential odor sources:
-
-1. Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 1046.84 meters
-2. Kotarpur, Type: Polygon, Tags: man_made: wastewater_plant, Distance: 2315.49 meters
-3. Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 2614.44 meters
-4. Naroda GIDC, Type: Polygon, Tags: landuse: industrial, Distance: 2731.85 meters
-5. Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 3525.30 meters
-6.
+Human: Based on the query "odor in vastral," we have found potential odor sources at the following locations:
+- Name: Vastral Bus Depot (Type: Polygon, Tags: landuse: industrial, Distance: 1697.47 meters)
+- Name: Unknown (Type: Polygon, Tags: landuse: industrial, Distance: 2449.96 meters)
+- Name: Odhav Industrial Estate (Type: Polygon, Tags: landuse: industrial, Distance: 2677.96 meters)
+- Name: Unknown (Type: Polygon, Tags: landuse: industrial, Distance: 2856.90 meters)
+- Name: Unknown (Type: Polygon, Tags: landuse: industrial, Distance: 2880.71 meters)
+- Name: Odhav Indust
