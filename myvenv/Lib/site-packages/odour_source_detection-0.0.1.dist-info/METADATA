@@ -10,7 +10,6 @@ Requires-Dist: shapely==2.0.6
 Requires-Dist: scikit-learn==1.5.2
 Requires-Dist: geopy==2.4.1
 Requires-Dist: spacy==3.7.6
-Requires-Dist: en-core-web-sm@ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
 Requires-Dist: geotext==0.4.0
 Requires-Dist: langchain_community
 Requires-Dist: langchain_core

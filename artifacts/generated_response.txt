@@ -1,8 +1,8 @@
-Machine: Ahmedabad, India, Gotta land area, polyglot of industrial zones with unknown odor sources detected. The following potential odor sources were found:
+Having analyzed the available information in Ahmedabad, India, based on the query "smell in Naroda", our AI assistant has identified the following potential odor sources:
 
-- Unknown Polygon type: Polygon tags: landuse: industrial, Distance: 843.19 meters
-- Unknown Polygon type: Polygon tags: landuse: industrial, Distance: 1105.50 meters
-- Unknown Polygon type: Polygon tags: landuse: industrial, Distance: 2362.83 meters
-- Unknown Polygon type: Polygon tags: landuse: industrial, Distance: 2955.65 meters
-- Unknown Polygon type: Polygon tags: landuse: industrial, Distance: 3391.64 meters
-- Unknown Polygon type: Polygon tags: landuse: industrial, Distance:
+1. Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 1046.84 meters
+2. Kotarpur, Type: Polygon, Tags: man_made: wastewater_plant, Distance: 2315.49 meters
+3. Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 2614.44 meters
+4. Naroda GIDC, Type: Polygon, Tags: landuse: industrial, Distance: 2731.85 meters
+5. Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 3525.30 meters
+6.
