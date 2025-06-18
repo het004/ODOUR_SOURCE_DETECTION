@@ -1397,3 +1397,344 @@ For further information visit https://errors.pydantic.dev/2.11/u/class-not-fully
 2025-06-18 10:03:16,646 - root - INFO - Processed query, found 9 odor sources
 2025-06-18 10:03:16,646 - root - INFO - Extracting location from user query: smell in naroda
 2025-06-18 10:03:16,654 - root - INFO - Location matched from Ahmedabad list: Naroda
+2025-06-18 11:17:53,983 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-18 11:17:54,156 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-18 11:17:54,156 - root - INFO - Initializing ResponseGenerator with Ollama model tinyllama
+2025-06-18 11:17:54,182 - root - INFO - ResponseGenerator initialized successfully.
+2025-06-18 11:17:54,183 - root - INFO - OdorSourcePipeline initialized with all components.
+2025-06-18 11:17:54,183 - root - INFO - Starting OdorSourcePipeline execution.
+2025-06-18 11:17:54,183 - root - INFO - Initiating data ingestion and processing.
+2025-06-18 11:17:54,183 - root - INFO - Entered the data ingestion method or component to load a GeoJSON file into a GeoDataFrame.
+2025-06-18 11:17:54,846 - root - INFO - Read the datasets as geopandas GeoDataFrame.
+2025-06-18 11:17:55,131 - root - INFO - Ingestion is completed.
+2025-06-18 11:17:55,132 - root - INFO - Started processing of GeoJSON data.
+2025-06-18 11:17:56,469 - root - INFO - Data has been processed and saved to artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-18 11:17:56,485 - root - INFO - First 5 rows of processed data:
+                 name     type                                               tags   latitude  longitude        area_m2
+0                None  Polygon                          {"landuse": "industrial"}  22.823841  72.600146  195795.400294
+1               AMGEN  Polygon  {"landuse": "industrial", "power": "plant", "p...  23.071507  72.593289  437670.283740
+2  ICD Khodiyar depot  Polygon                          {"landuse": "industrial"}  23.165492  72.549443  638732.197203
+3                None  Polygon                          {"landuse": "industrial"}  22.973104  72.559483   14032.095402
+4   Wonder Industries  Polygon  {"landuse": "industrial", "industrial": "manuf...  22.755604  72.335554   51901.426435
+2025-06-18 11:17:56,485 - root - INFO - Data processed and saved to artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-18 11:17:56,485 - root - INFO - Initiating knowledge base preparation.
+2025-06-18 11:17:56,485 - root - INFO - Loading data from artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-18 11:17:56,518 - root - INFO - Data loaded successfully.
+2025-06-18 11:17:56,518 - root - INFO - Preprocessing text data for TF-IDF vectorization.
+2025-06-18 11:17:56,524 - root - INFO - Text preprocessing completed.
+2025-06-18 11:17:56,524 - root - INFO - Generating TF-IDF matrix.
+2025-06-18 11:17:56,537 - root - INFO - TF-IDF vectorizer saved at artifacts\tfidf_vectorizer.pkl.
+2025-06-18 11:17:56,538 - root - INFO - TF-IDF feature matrix saved at artifacts\feature_matrix.pkl.
+2025-06-18 11:17:56,539 - root - INFO - Knowledge base preparation completed successfully.
+2025-06-18 11:17:56,539 - root - INFO - Knowledge base preparation completed.
+2025-06-18 11:17:56,539 - root - INFO - Processing user query: odor in Sindhubhavan
+2025-06-18 11:17:56,539 - root - INFO - Processing query: odor in Sindhubhavan
+2025-06-18 11:17:56,539 - root - INFO - Extracting location from user query: odor in Sindhubhavan
+2025-06-18 11:17:56,575 - root - INFO - Location matched from Ahmedabad list: SindhuBhavan
+2025-06-18 11:17:56,575 - root - INFO - Geocoding location: SindhuBhavan
+2025-06-18 11:17:57,283 - root - WARNING - No coordinates found for location: SindhuBhavan
+2025-06-18 11:17:57,283 - root - WARNING - Could not geocode location: SindhuBhavan
+2025-06-18 11:17:57,283 - root - INFO - Extracting location from user query: odor in Sindhubhavan
+2025-06-18 11:17:57,292 - root - INFO - Location matched from Ahmedabad list: SindhuBhavan
+2025-06-18 11:17:57,292 - root - INFO - Query processed, found 0 odor sources near SindhuBhavan
+2025-06-18 11:17:57,292 - root - INFO - Generating natural language response.
+2025-06-18 11:17:57,292 - root - INFO - Generating response for query: odor in Sindhubhavan, location: SindhuBhavan
+2025-06-18 11:18:12,499 - root - INFO - Response saved to artifacts\generated_response.txt
+2025-06-18 11:18:12,501 - root - INFO - Response generated and saved.
+2025-06-18 11:18:12,507 - root - INFO - No odor sources found for query.
+2025-06-18 11:18:12,507 - root - INFO - Processing query: odor in Sindhubhavan
+2025-06-18 11:18:12,507 - root - INFO - Extracting location from user query: odor in Sindhubhavan
+2025-06-18 11:18:12,524 - root - INFO - Location matched from Ahmedabad list: SindhuBhavan
+2025-06-18 11:18:12,524 - root - INFO - Geocoding location: SindhuBhavan
+2025-06-18 11:18:12,750 - root - WARNING - No coordinates found for location: SindhuBhavan
+2025-06-18 11:18:12,751 - root - WARNING - Could not geocode location: SindhuBhavan
+2025-06-18 11:18:12,751 - root - INFO - Extracting location from user query: odor in Sindhubhavan
+2025-06-18 11:18:12,757 - root - INFO - Location matched from Ahmedabad list: SindhuBhavan
+2025-06-18 11:19:12,591 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-18 11:19:12,750 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-18 11:19:12,750 - root - INFO - Initializing ResponseGenerator with Ollama model tinyllama
+2025-06-18 11:19:12,753 - root - INFO - ResponseGenerator initialized successfully.
+2025-06-18 11:19:12,753 - root - INFO - OdorSourcePipeline initialized with all components.
+2025-06-18 11:19:12,753 - root - INFO - Starting OdorSourcePipeline execution.
+2025-06-18 11:19:12,753 - root - INFO - Initiating data ingestion and processing.
+2025-06-18 11:19:12,753 - root - INFO - Entered the data ingestion method or component to load a GeoJSON file into a GeoDataFrame.
+2025-06-18 11:19:13,042 - root - INFO - Read the datasets as geopandas GeoDataFrame.
+2025-06-18 11:19:13,286 - root - INFO - Ingestion is completed.
+2025-06-18 11:19:13,286 - root - INFO - Started processing of GeoJSON data.
+2025-06-18 11:19:14,869 - root - INFO - Data has been processed and saved to artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-18 11:19:14,879 - root - INFO - First 5 rows of processed data:
+                 name     type                                               tags   latitude  longitude        area_m2
+0                None  Polygon                          {"landuse": "industrial"}  22.823841  72.600146  195795.400294
+1               AMGEN  Polygon  {"landuse": "industrial", "power": "plant", "p...  23.071507  72.593289  437670.283740
+2  ICD Khodiyar depot  Polygon                          {"landuse": "industrial"}  23.165492  72.549443  638732.197203
+3                None  Polygon                          {"landuse": "industrial"}  22.973104  72.559483   14032.095402
+4   Wonder Industries  Polygon  {"landuse": "industrial", "industrial": "manuf...  22.755604  72.335554   51901.426435
+2025-06-18 11:19:14,880 - root - INFO - Data processed and saved to artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-18 11:19:14,880 - root - INFO - Initiating knowledge base preparation.
+2025-06-18 11:19:14,880 - root - INFO - Loading data from artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-18 11:19:14,913 - root - INFO - Data loaded successfully.
+2025-06-18 11:19:14,913 - root - INFO - Preprocessing text data for TF-IDF vectorization.
+2025-06-18 11:19:14,919 - root - INFO - Text preprocessing completed.
+2025-06-18 11:19:14,919 - root - INFO - Generating TF-IDF matrix.
+2025-06-18 11:19:14,929 - root - INFO - TF-IDF vectorizer saved at artifacts\tfidf_vectorizer.pkl.
+2025-06-18 11:19:14,931 - root - INFO - TF-IDF feature matrix saved at artifacts\feature_matrix.pkl.
+2025-06-18 11:19:14,932 - root - INFO - Knowledge base preparation completed successfully.
+2025-06-18 11:19:14,932 - root - INFO - Knowledge base preparation completed.
+2025-06-18 11:19:14,932 - root - INFO - Processing user query: odor in ambli
+2025-06-18 11:19:14,932 - root - INFO - Processing query: odor in ambli
+2025-06-18 11:19:14,932 - root - INFO - Extracting location from user query: odor in ambli
+2025-06-18 11:19:14,938 - root - WARNING - No location found via GeoText, NER, or Ahmedabad list.
+2025-06-18 11:19:14,938 - root - WARNING - No location extracted from query
+2025-06-18 11:19:14,938 - root - INFO - Extracting location from user query: odor in ambli
+2025-06-18 11:19:14,943 - root - WARNING - No location found via GeoText, NER, or Ahmedabad list.
+2025-06-18 11:19:14,943 - root - INFO - Query processed, found 0 odor sources near unknown
+2025-06-18 11:19:14,943 - root - INFO - Generating natural language response.
+2025-06-18 11:19:14,943 - root - INFO - Generating response for query: odor in ambli, location: unknown
+2025-06-18 11:19:26,880 - root - INFO - Response saved to artifacts\generated_response.txt
+2025-06-18 11:19:26,880 - root - INFO - Response generated and saved.
+2025-06-18 11:19:26,881 - root - INFO - No odor sources found for query.
+2025-06-18 11:19:26,881 - root - INFO - Processing query: odor in ambli
+2025-06-18 11:19:26,881 - root - INFO - Extracting location from user query: odor in ambli
+2025-06-18 11:19:26,888 - root - WARNING - No location found via GeoText, NER, or Ahmedabad list.
+2025-06-18 11:19:26,888 - root - WARNING - No location extracted from query
+2025-06-18 11:19:26,888 - root - INFO - Extracting location from user query: odor in ambli
+2025-06-18 11:19:26,895 - root - WARNING - No location found via GeoText, NER, or Ahmedabad list.
+2025-06-18 11:19:45,899 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-18 11:19:45,932 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-18 11:19:45,932 - root - INFO - Initializing ResponseGenerator with Ollama model tinyllama
+2025-06-18 11:19:45,932 - root - INFO - ResponseGenerator initialized successfully.
+2025-06-18 11:19:45,932 - root - INFO - OdorSourcePipeline initialized with all components.
+2025-06-18 11:19:45,932 - root - INFO - Starting OdorSourcePipeline execution.
+2025-06-18 11:19:45,932 - root - INFO - Initiating data ingestion and processing.
+2025-06-18 11:19:45,932 - root - INFO - Entered the data ingestion method or component to load a GeoJSON file into a GeoDataFrame.
+2025-06-18 11:19:46,052 - root - INFO - Read the datasets as geopandas GeoDataFrame.
+2025-06-18 11:19:46,309 - root - INFO - Ingestion is completed.
+2025-06-18 11:19:46,309 - root - INFO - Started processing of GeoJSON data.
+2025-06-18 11:19:47,493 - root - INFO - Data has been processed and saved to artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-18 11:19:47,500 - root - INFO - First 5 rows of processed data:
+                 name     type                                               tags   latitude  longitude        area_m2
+0                None  Polygon                          {"landuse": "industrial"}  22.823841  72.600146  195795.400294
+1               AMGEN  Polygon  {"landuse": "industrial", "power": "plant", "p...  23.071507  72.593289  437670.283740
+2  ICD Khodiyar depot  Polygon                          {"landuse": "industrial"}  23.165492  72.549443  638732.197203
+3                None  Polygon                          {"landuse": "industrial"}  22.973104  72.559483   14032.095402
+4   Wonder Industries  Polygon  {"landuse": "industrial", "industrial": "manuf...  22.755604  72.335554   51901.426435
+2025-06-18 11:19:47,500 - root - INFO - Data processed and saved to artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-18 11:19:47,500 - root - INFO - Initiating knowledge base preparation.
+2025-06-18 11:19:47,500 - root - INFO - Loading data from artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-18 11:19:47,514 - root - INFO - Data loaded successfully.
+2025-06-18 11:19:47,516 - root - INFO - Preprocessing text data for TF-IDF vectorization.
+2025-06-18 11:19:47,521 - root - INFO - Text preprocessing completed.
+2025-06-18 11:19:47,521 - root - INFO - Generating TF-IDF matrix.
+2025-06-18 11:19:47,524 - root - INFO - TF-IDF vectorizer saved at artifacts\tfidf_vectorizer.pkl.
+2025-06-18 11:19:47,526 - root - INFO - TF-IDF feature matrix saved at artifacts\feature_matrix.pkl.
+2025-06-18 11:19:47,526 - root - INFO - Knowledge base preparation completed successfully.
+2025-06-18 11:19:47,526 - root - INFO - Knowledge base preparation completed.
+2025-06-18 11:19:47,526 - root - INFO - Processing user query: odor in SindhuBhavan
+2025-06-18 11:19:47,526 - root - INFO - Processing query: odor in SindhuBhavan
+2025-06-18 11:19:47,527 - root - INFO - Extracting location from user query: odor in SindhuBhavan
+2025-06-18 11:19:47,533 - root - INFO - Location matched from Ahmedabad list: SindhuBhavan
+2025-06-18 11:19:47,533 - root - INFO - Geocoding location: SindhuBhavan
+2025-06-18 11:19:48,113 - root - WARNING - No coordinates found for location: SindhuBhavan
+2025-06-18 11:19:48,113 - root - WARNING - Could not geocode location: SindhuBhavan
+2025-06-18 11:19:48,113 - root - INFO - Extracting location from user query: odor in SindhuBhavan
+2025-06-18 11:19:48,118 - root - INFO - Location matched from Ahmedabad list: SindhuBhavan
+2025-06-18 11:19:48,118 - root - INFO - Query processed, found 0 odor sources near SindhuBhavan
+2025-06-18 11:19:48,118 - root - INFO - Generating natural language response.
+2025-06-18 11:19:48,118 - root - INFO - Generating response for query: odor in SindhuBhavan, location: SindhuBhavan
+2025-06-18 11:19:54,740 - root - INFO - Response saved to artifacts\generated_response.txt
+2025-06-18 11:19:54,740 - root - INFO - Response generated and saved.
+2025-06-18 11:19:54,742 - root - INFO - No odor sources found for query.
+2025-06-18 11:19:54,742 - root - INFO - Processing query: odor in SindhuBhavan
+2025-06-18 11:19:54,742 - root - INFO - Extracting location from user query: odor in SindhuBhavan
+2025-06-18 11:19:54,748 - root - INFO - Location matched from Ahmedabad list: SindhuBhavan
+2025-06-18 11:19:54,749 - root - INFO - Geocoding location: SindhuBhavan
+2025-06-18 11:19:54,989 - root - WARNING - No coordinates found for location: SindhuBhavan
+2025-06-18 11:19:54,989 - root - WARNING - Could not geocode location: SindhuBhavan
+2025-06-18 11:19:54,989 - root - INFO - Extracting location from user query: odor in SindhuBhavan
+2025-06-18 11:19:54,996 - root - INFO - Location matched from Ahmedabad list: SindhuBhavan
+2025-06-18 11:20:48,455 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-18 11:20:48,507 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-18 11:20:48,507 - root - INFO - Initializing ResponseGenerator with Ollama model tinyllama
+2025-06-18 11:20:48,508 - root - INFO - ResponseGenerator initialized successfully.
+2025-06-18 11:20:48,508 - root - INFO - OdorSourcePipeline initialized with all components.
+2025-06-18 11:20:48,508 - root - INFO - Starting OdorSourcePipeline execution.
+2025-06-18 11:20:48,508 - root - INFO - Initiating data ingestion and processing.
+2025-06-18 11:20:48,508 - root - INFO - Entered the data ingestion method or component to load a GeoJSON file into a GeoDataFrame.
+2025-06-18 11:20:48,619 - root - INFO - Read the datasets as geopandas GeoDataFrame.
+2025-06-18 11:20:48,852 - root - INFO - Ingestion is completed.
+2025-06-18 11:20:48,852 - root - INFO - Started processing of GeoJSON data.
+2025-06-18 11:20:50,361 - root - INFO - Data has been processed and saved to artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-18 11:20:50,366 - root - INFO - First 5 rows of processed data:
+                 name     type                                               tags   latitude  longitude        area_m2
+0                None  Polygon                          {"landuse": "industrial"}  22.823841  72.600146  195795.400294
+1               AMGEN  Polygon  {"landuse": "industrial", "power": "plant", "p...  23.071507  72.593289  437670.283740
+2  ICD Khodiyar depot  Polygon                          {"landuse": "industrial"}  23.165492  72.549443  638732.197203
+3                None  Polygon                          {"landuse": "industrial"}  22.973104  72.559483   14032.095402
+4   Wonder Industries  Polygon  {"landuse": "industrial", "industrial": "manuf...  22.755604  72.335554   51901.426435
+2025-06-18 11:20:50,367 - root - INFO - Data processed and saved to artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-18 11:20:50,367 - root - INFO - Initiating knowledge base preparation.
+2025-06-18 11:20:50,367 - root - INFO - Loading data from artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-18 11:20:50,394 - root - INFO - Data loaded successfully.
+2025-06-18 11:20:50,395 - root - INFO - Preprocessing text data for TF-IDF vectorization.
+2025-06-18 11:20:50,400 - root - INFO - Text preprocessing completed.
+2025-06-18 11:20:50,400 - root - INFO - Generating TF-IDF matrix.
+2025-06-18 11:20:50,405 - root - INFO - TF-IDF vectorizer saved at artifacts\tfidf_vectorizer.pkl.
+2025-06-18 11:20:50,410 - root - INFO - TF-IDF feature matrix saved at artifacts\feature_matrix.pkl.
+2025-06-18 11:20:50,410 - root - INFO - Knowledge base preparation completed successfully.
+2025-06-18 11:20:50,411 - root - INFO - Knowledge base preparation completed.
+2025-06-18 11:20:50,411 - root - INFO - Processing user query: odor in gota
+2025-06-18 11:20:50,411 - root - INFO - Processing query: odor in gota
+2025-06-18 11:20:50,411 - root - INFO - Extracting location from user query: odor in gota
+2025-06-18 11:20:50,417 - root - INFO - Location matched from Ahmedabad list: Gota
+2025-06-18 11:20:50,418 - root - INFO - Geocoding location: Gota
+2025-06-18 11:20:51,192 - root - INFO - Geocoded Gota to (23.1010002, 72.5408363)
+2025-06-18 11:20:51,193 - root - INFO - Finding odor sources near (23.1010002, 72.5408363)
+2025-06-18 11:20:51,225 - root - INFO - Found 15 odor sources within 5000.0m
+2025-06-18 11:20:51,228 - root - INFO - Filtering odor sources based on tags and query similarity
+2025-06-18 11:20:51,235 - root - INFO - Filtered 14 odor sources with similarity scores
+2025-06-18 11:20:51,238 - root - INFO - Sorted odor sources by distance_m in ascending order
+2025-06-18 11:20:51,240 - root - INFO - Processed query, found 14 odor sources
+2025-06-18 11:20:51,240 - root - INFO - Extracting location from user query: odor in gota
+2025-06-18 11:20:51,248 - root - INFO - Location matched from Ahmedabad list: Gota
+2025-06-18 11:20:51,248 - root - INFO - Query processed, found 14 odor sources near Gota
+2025-06-18 11:20:51,248 - root - INFO - Generating natural language response.
+2025-06-18 11:20:51,249 - root - INFO - Generating response for query: odor in gota, location: Gota
+2025-06-18 11:21:06,922 - root - INFO - Response saved to artifacts\generated_response.txt
+2025-06-18 11:21:06,923 - root - INFO - Response generated and saved.
+2025-06-18 11:21:06,931 - root - INFO - Processing query: odor in gota
+2025-06-18 11:21:06,931 - root - INFO - Extracting location from user query: odor in gota
+2025-06-18 11:21:06,938 - root - INFO - Location matched from Ahmedabad list: Gota
+2025-06-18 11:21:06,938 - root - INFO - Geocoding location: Gota
+2025-06-18 11:21:07,263 - root - INFO - Geocoded Gota to (23.1010002, 72.5408363)
+2025-06-18 11:21:07,263 - root - INFO - Finding odor sources near (23.1010002, 72.5408363)
+2025-06-18 11:21:07,271 - root - INFO - Found 15 odor sources within 5000.0m
+2025-06-18 11:21:07,272 - root - INFO - Filtering odor sources based on tags and query similarity
+2025-06-18 11:21:07,275 - root - INFO - Filtered 14 odor sources with similarity scores
+2025-06-18 11:21:07,276 - root - INFO - Sorted odor sources by distance_m in ascending order
+2025-06-18 11:21:07,277 - root - INFO - Processed query, found 14 odor sources
+2025-06-18 11:21:07,277 - root - INFO - Extracting location from user query: odor in gota
+2025-06-18 11:21:07,284 - root - INFO - Location matched from Ahmedabad list: Gota
+2025-06-18 11:21:20,358 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-18 11:21:20,393 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-18 11:21:20,393 - root - INFO - Initializing ResponseGenerator with Ollama model tinyllama
+2025-06-18 11:21:20,393 - root - INFO - ResponseGenerator initialized successfully.
+2025-06-18 11:21:20,393 - root - INFO - OdorSourcePipeline initialized with all components.
+2025-06-18 11:21:20,394 - root - INFO - Starting OdorSourcePipeline execution.
+2025-06-18 11:21:20,394 - root - INFO - Initiating data ingestion and processing.
+2025-06-18 11:21:20,394 - root - INFO - Entered the data ingestion method or component to load a GeoJSON file into a GeoDataFrame.
+2025-06-18 11:21:20,500 - root - INFO - Read the datasets as geopandas GeoDataFrame.
+2025-06-18 11:21:20,691 - root - INFO - Ingestion is completed.
+2025-06-18 11:21:20,692 - root - INFO - Started processing of GeoJSON data.
+2025-06-18 11:21:21,975 - root - INFO - Data has been processed and saved to artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-18 11:21:21,981 - root - INFO - First 5 rows of processed data:
+                 name     type                                               tags   latitude  longitude        area_m2
+0                None  Polygon                          {"landuse": "industrial"}  22.823841  72.600146  195795.400294
+1               AMGEN  Polygon  {"landuse": "industrial", "power": "plant", "p...  23.071507  72.593289  437670.283740
+2  ICD Khodiyar depot  Polygon                          {"landuse": "industrial"}  23.165492  72.549443  638732.197203
+3                None  Polygon                          {"landuse": "industrial"}  22.973104  72.559483   14032.095402
+4   Wonder Industries  Polygon  {"landuse": "industrial", "industrial": "manuf...  22.755604  72.335554   51901.426435
+2025-06-18 11:21:21,981 - root - INFO - Data processed and saved to artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-18 11:21:21,981 - root - INFO - Initiating knowledge base preparation.
+2025-06-18 11:21:21,981 - root - INFO - Loading data from artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-18 11:21:21,994 - root - INFO - Data loaded successfully.
+2025-06-18 11:21:21,995 - root - INFO - Preprocessing text data for TF-IDF vectorization.
+2025-06-18 11:21:21,998 - root - INFO - Text preprocessing completed.
+2025-06-18 11:21:21,999 - root - INFO - Generating TF-IDF matrix.
+2025-06-18 11:21:22,004 - root - INFO - TF-IDF vectorizer saved at artifacts\tfidf_vectorizer.pkl.
+2025-06-18 11:21:22,012 - root - INFO - TF-IDF feature matrix saved at artifacts\feature_matrix.pkl.
+2025-06-18 11:21:22,012 - root - INFO - Knowledge base preparation completed successfully.
+2025-06-18 11:21:22,012 - root - INFO - Knowledge base preparation completed.
+2025-06-18 11:21:22,012 - root - INFO - Processing user query: odor in vastral
+2025-06-18 11:21:22,012 - root - INFO - Processing query: odor in vastral
+2025-06-18 11:21:22,012 - root - INFO - Extracting location from user query: odor in vastral
+2025-06-18 11:21:22,019 - root - INFO - Location matched from Ahmedabad list: Vastral
+2025-06-18 11:21:22,020 - root - INFO - Geocoding location: Vastral
+2025-06-18 11:21:22,798 - root - INFO - Geocoded Vastral to (22.9948656, 72.6624431)
+2025-06-18 11:21:22,798 - root - INFO - Finding odor sources near (22.9948656, 72.6624431)
+2025-06-18 11:21:22,807 - root - INFO - Found 37 odor sources within 5000.0m
+2025-06-18 11:21:22,810 - root - INFO - Filtering odor sources based on tags and query similarity
+2025-06-18 11:21:22,815 - root - INFO - Filtered 21 odor sources with similarity scores
+2025-06-18 11:21:22,815 - root - INFO - Sorted odor sources by distance_m in ascending order
+2025-06-18 11:21:22,817 - root - INFO - Processed query, found 21 odor sources
+2025-06-18 11:21:22,817 - root - INFO - Extracting location from user query: odor in vastral
+2025-06-18 11:21:22,823 - root - INFO - Location matched from Ahmedabad list: Vastral
+2025-06-18 11:21:22,823 - root - INFO - Query processed, found 21 odor sources near Vastral
+2025-06-18 11:21:22,823 - root - INFO - Generating natural language response.
+2025-06-18 11:21:22,823 - root - INFO - Generating response for query: odor in vastral, location: Vastral
+2025-06-18 11:21:41,950 - root - INFO - Response saved to artifacts\generated_response.txt
+2025-06-18 11:21:41,951 - root - INFO - Response generated and saved.
+2025-06-18 11:21:41,963 - root - INFO - Processing query: odor in vastral
+2025-06-18 11:21:41,963 - root - INFO - Extracting location from user query: odor in vastral
+2025-06-18 11:21:41,972 - root - INFO - Location matched from Ahmedabad list: Vastral
+2025-06-18 11:21:41,972 - root - INFO - Geocoding location: Vastral
+2025-06-18 11:21:42,230 - root - INFO - Geocoded Vastral to (22.9948656, 72.6624431)
+2025-06-18 11:21:42,231 - root - INFO - Finding odor sources near (22.9948656, 72.6624431)
+2025-06-18 11:21:42,240 - root - INFO - Found 37 odor sources within 5000.0m
+2025-06-18 11:21:42,241 - root - INFO - Filtering odor sources based on tags and query similarity
+2025-06-18 11:21:42,244 - root - INFO - Filtered 21 odor sources with similarity scores
+2025-06-18 11:21:42,245 - root - INFO - Sorted odor sources by distance_m in ascending order
+2025-06-18 11:21:42,246 - root - INFO - Processed query, found 21 odor sources
+2025-06-18 11:21:42,246 - root - INFO - Extracting location from user query: odor in vastral
+2025-06-18 11:21:42,250 - root - INFO - Location matched from Ahmedabad list: Vastral
+2025-06-18 11:34:30,075 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-18 11:34:30,240 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-18 11:34:30,240 - root - INFO - Initializing ResponseGenerator with Ollama model tinyllama
+2025-06-18 11:34:30,258 - root - INFO - ResponseGenerator initialized successfully.
+2025-06-18 11:34:30,258 - root - INFO - OdorSourcePipeline initialized with all components.
+2025-06-18 11:34:30,258 - root - INFO - Starting OdorSourcePipeline execution.
+2025-06-18 11:34:30,259 - root - INFO - Initiating data ingestion and processing.
+2025-06-18 11:34:30,259 - root - INFO - Entered the data ingestion method or component to load a GeoJSON file into a GeoDataFrame.
+2025-06-18 11:34:33,820 - root - INFO - Read the datasets as geopandas GeoDataFrame.
+2025-06-18 11:34:34,080 - root - INFO - Ingestion is completed.
+2025-06-18 11:34:34,080 - root - INFO - Started processing of GeoJSON data.
+2025-06-18 11:34:35,348 - root - INFO - Data has been processed and saved to artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-18 11:34:35,358 - root - INFO - First 5 rows of processed data:
+                 name     type                                               tags   latitude  longitude        area_m2
+0                None  Polygon                          {"landuse": "industrial"}  22.823841  72.600146  195795.400294
+1               AMGEN  Polygon  {"landuse": "industrial", "power": "plant", "p...  23.071507  72.593289  437670.283740
+2  ICD Khodiyar depot  Polygon                          {"landuse": "industrial"}  23.165492  72.549443  638732.197203
+3                None  Polygon                          {"landuse": "industrial"}  22.973104  72.559483   14032.095402
+4   Wonder Industries  Polygon  {"landuse": "industrial", "industrial": "manuf...  22.755604  72.335554   51901.426435
+2025-06-18 11:34:35,358 - root - INFO - Data processed and saved to artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-18 11:34:35,358 - root - INFO - Initiating knowledge base preparation.
+2025-06-18 11:34:35,358 - root - INFO - Loading data from artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-18 11:34:35,411 - root - INFO - Data loaded successfully.
+2025-06-18 11:34:35,411 - root - INFO - Preprocessing text data for TF-IDF vectorization.
+2025-06-18 11:34:35,416 - root - INFO - Text preprocessing completed.
+2025-06-18 11:34:35,416 - root - INFO - Generating TF-IDF matrix.
+2025-06-18 11:34:35,425 - root - INFO - TF-IDF vectorizer saved at artifacts\tfidf_vectorizer.pkl.
+2025-06-18 11:34:35,427 - root - INFO - TF-IDF feature matrix saved at artifacts\feature_matrix.pkl.
+2025-06-18 11:34:35,427 - root - INFO - Knowledge base preparation completed successfully.
+2025-06-18 11:34:35,427 - root - INFO - Knowledge base preparation completed.
+2025-06-18 11:34:35,427 - root - INFO - Processing user query: smell in sarkhej
+2025-06-18 11:34:35,427 - root - INFO - Processing query: smell in sarkhej
+2025-06-18 11:34:35,427 - root - INFO - Extracting location from user query: smell in sarkhej
+2025-06-18 11:34:35,452 - root - INFO - Location matched from Ahmedabad list: Sarkhej
+2025-06-18 11:34:35,452 - root - INFO - Geocoding location: Sarkhej
+2025-06-18 11:34:36,212 - root - INFO - Geocoded Sarkhej to (22.983483, 72.5007203)
+2025-06-18 11:34:36,212 - root - INFO - Finding odor sources near (22.983483, 72.5007203)
+2025-06-18 11:34:36,227 - root - INFO - Found 13 odor sources within 5000.0m
+2025-06-18 11:34:36,230 - root - INFO - Filtering odor sources based on tags and query similarity
+2025-06-18 11:34:36,235 - root - INFO - Filtered 12 odor sources with similarity scores
+2025-06-18 11:34:36,236 - root - INFO - Sorted odor sources by distance_m in ascending order
+2025-06-18 11:34:36,237 - root - INFO - Processed query, found 12 odor sources
+2025-06-18 11:34:36,237 - root - INFO - Extracting location from user query: smell in sarkhej
+2025-06-18 11:34:36,243 - root - INFO - Location matched from Ahmedabad list: Sarkhej
+2025-06-18 11:34:36,244 - root - INFO - Query processed, found 12 odor sources near Sarkhej
+2025-06-18 11:34:36,244 - root - INFO - Generating natural language response.
+2025-06-18 11:34:36,244 - root - INFO - Generating response for query: smell in sarkhej, location: Sarkhej
+2025-06-18 11:35:08,639 - root - INFO - Response saved to artifacts\generated_response.txt
+2025-06-18 11:35:08,639 - root - INFO - Response generated and saved.
+2025-06-18 11:35:08,647 - root - INFO - Processing query: smell in sarkhej
+2025-06-18 11:35:08,648 - root - INFO - Extracting location from user query: smell in sarkhej
+2025-06-18 11:35:08,654 - root - INFO - Location matched from Ahmedabad list: Sarkhej
+2025-06-18 11:35:08,654 - root - INFO - Geocoding location: Sarkhej
+2025-06-18 11:35:09,353 - root - INFO - Geocoded Sarkhej to (22.983483, 72.5007203)
+2025-06-18 11:35:09,353 - root - INFO - Finding odor sources near (22.983483, 72.5007203)
+2025-06-18 11:35:09,361 - root - INFO - Found 13 odor sources within 5000.0m
+2025-06-18 11:35:09,362 - root - INFO - Filtering odor sources based on tags and query similarity
+2025-06-18 11:35:09,367 - root - INFO - Filtered 12 odor sources with similarity scores
+2025-06-18 11:35:09,367 - root - INFO - Sorted odor sources by distance_m in ascending order
+2025-06-18 11:35:09,369 - root - INFO - Processed query, found 12 odor sources
+2025-06-18 11:35:09,369 - root - INFO - Extracting location from user query: smell in sarkhej
+2025-06-18 11:35:09,373 - root - INFO - Location matched from Ahmedabad list: Sarkhej

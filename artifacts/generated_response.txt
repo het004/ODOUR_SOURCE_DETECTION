@@ -1,7 +1,8 @@
-Human: Based on the query "odor in vastral," we have found potential odor sources at the following locations:
-- Name: Vastral Bus Depot (Type: Polygon, Tags: landuse: industrial, Distance: 1697.47 meters)
-- Name: Unknown (Type: Polygon, Tags: landuse: industrial, Distance: 2449.96 meters)
-- Name: Odhav Industrial Estate (Type: Polygon, Tags: landuse: industrial, Distance: 2677.96 meters)
-- Name: Unknown (Type: Polygon, Tags: landuse: industrial, Distance: 2856.90 meters)
-- Name: Unknown (Type: Polygon, Tags: landuse: industrial, Distance: 2880.71 meters)
-- Name: Odhav Indust
+Response: Based on the query "smell in Sarkhej", and the extracted location "SaRkhEj", the following potential odor sources were found:
+
+- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 556.18 meters
+- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 1276.27 meters
+- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 1487.03 meters
+- Name: Unknown, Type: Polygon, Tags: landuse: industrial, Distance: 2716.13 meters
+- Name: Unknown, Type: Polygon, Tags: man_made: wastewater_plant, Distance: 3307.71 meters
+- Name: Unknown,
