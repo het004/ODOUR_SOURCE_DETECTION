@@ -11,10 +11,8 @@ Requires-Dist: scikit-learn==1.5.2
 Requires-Dist: geopy==2.4.1
 Requires-Dist: spacy==3.7.6
 Requires-Dist: geotext==0.4.0
-Requires-Dist: langchain_community
-Requires-Dist: langchain_core
-Requires-Dist: langchain-ollama
 Requires-Dist: streamlit
+Requires-Dist: requests
 Dynamic: author
 Dynamic: author-email
 Dynamic: requires-dist
