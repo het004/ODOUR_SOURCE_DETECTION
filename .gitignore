@@ -6,6 +6,7 @@ __pycache__/
 .env
 SRC/components/.env
 .streamlit\secrets.toml
+.streamlit
 
 # C extensions
 *.so
