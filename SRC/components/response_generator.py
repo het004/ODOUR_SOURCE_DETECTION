@@ -1,58 +1,36 @@
 import os
+from dotenv import load_dotenv
+load_dotenv()  # Load .env for local testing
 import sys
 from typing import List, Dict
 from dataclasses import dataclass
-from langchain_community.llms import Ollama  # Revert to deprecated Ollama class
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.output_parsers import StrOutputParser
 from SRC.exception import CustomException
 from SRC.logger import logging
-from dotenv import load_dotenv
+import requests
 
-# Load environment variables for LangChain tracing
-load_dotenv()
-os.environ["LANGCHAIN_TRACING_V2"] = "true"
-os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
+try:
+    import streamlit as st
+    USE_STREAMLIT = True
+except ImportError:
+    USE_STREAMLIT = False
 
 @dataclass
 class ResponseGeneratorConfig:
     output_response_path: str = os.path.join('artifacts', 'generated_response.txt')
-    model_name: str = "tinyllama"  # Ollama model name
-    max_response_length: int = 200  # Max tokens for generated response
+    max_response_length: int = 200
 
 class ResponseGenerator:
     def __init__(self):
         self.config = ResponseGeneratorConfig()
-        try:
-            logging.info(f"Initializing ResponseGenerator with Ollama model {self.config.model_name}")
-            # Verify LangChain tracing setup
-            if not os.getenv("LANGCHAIN_API_KEY"):
-                logging.warning("LANGCHAIN_API_KEY not set. Tracing will not work.")
-            # Initialize Ollama with the deprecated Ollama class
-            self.llm = Ollama(
-                model=self.config.model_name,
-                base_url="http://localhost:11434",
-                num_predict=self.config.max_response_length,
-                temperature=0.7,
-                top_p=0.9
-            )
-            # Define chat prompt template
-            self.prompt_template = ChatPromptTemplate.from_messages([
-                ("system", "You are an assistant helping users identify potential odor sources in Ahmedabad, India. Provide a concise, polite, and natural response summarizing the findings."),
-                ("user", """Based on the query "{query}" and the extracted location "{location}", the following potential odor sources were found:
+        self.api_url = "https://router.huggingface.co/nebius/v1/chat/completions"
+        if USE_STREAMLIT:
+            self.api_key = st.secrets["HF_API_KEY"]
+        else:
+            self.api_key = os.getenv("HF_API_KEY")  # Local environment
 
-{sources}
-
-Summarize these findings, including the location and relevant details (e.g., source names, types, distances). If no sources are found, inform the user that no odor sources were identified near the location.""")
-            ])
-            # Set up LangChain chain
-            self.chain = self.prompt_template | self.llm | StrOutputParser()
-            logging.info("ResponseGenerator initialized successfully.")
-        except Exception as e:
-            raise CustomException(e, sys)
+        print("Loaded HF_API_KEY:", self.api_key)  # Debug print, remove in production
 
     def format_sources(self, sources: List[Dict]) -> str:
-        """Format odor sources into a string for the prompt."""
         try:
             if not sources:
                 return "No odor sources found."
@@ -68,32 +46,31 @@ Summarize these findings, including the location and relevant details (e.g., sou
             return "\n".join(formatted)
         except Exception as e:
             raise CustomException(e, sys)
-
     def generate_response(self, query: str, location: str, sources: List[Dict]) -> str:
-        """Generate a natural language response using Ollama's model and LangChain."""
         try:
-            logging.info(f"Generating response for query: {query}, location: {location}")
             formatted_sources = self.format_sources(sources)
-            # Invoke LangChain chain (traced to LangSmith if enabled)
-            response = self.chain.invoke({
-                "query": query,
-                "location": location,
-                "sources": formatted_sources
-            })
-            # Trim response to remove unnecessary tokens
-            response = response.strip()
-            # Save response to file
-            os.makedirs(os.path.dirname(self.config.output_response_path), exist_ok=True)
-            with open(self.config.output_response_path, 'w') as f:
-                f.write(response)
-            logging.info(f"Response saved to {self.config.output_response_path}")
-            return response
+            messages = [
+                {"role": "system", "content": "You are an assistant helping users identify potential odor sources in Ahmedabad, India. Provide a concise, polite, and natural response summarizing the findings."},
+                {"role": "user", "content": f"""Based on the query \"{query}\" and the extracted location \"{location}\", the following potential odor sources were found:\n\n{formatted_sources}\n\nSummarize these findings, including the location and relevant details (e.g., source names, types, distances). If no sources are found, inform the user that no odor sources were identified near the location."""}
+            ]
+
+            headers = {"Authorization": f"Bearer {self.api_key}"}
+            payload = {
+                "messages": messages,
+                "model": "deepseek-ai/DeepSeek-R1-fast"
+            }
+
+            response = requests.post(self.api_url, headers=headers, json=payload)
+            if response.status_code == 200:
+                result = response.json()
+                return result["choices"][0]["message"]["content"].strip()
+            else:
+                raise Exception(f"HuggingFace API error: {response.status_code} - {response.text}")
         except Exception as e:
             raise CustomException(e, sys)
 
 if __name__ == "__main__":
     from SRC.components.query_processor import QueryProcessor
-    # Test the response generator
     processor = QueryProcessor()
     generator = ResponseGenerator()
     query = input("Enter your query (e.g., 'odor in Navrangpura'): ")
