@@ -33,7 +33,8 @@ with st.sidebar:
     2. Click the "Find Odor Sources" button to process your query.
     3. View the results, including a list of potential odor sources and a summary.
     """)
-    st.info("Ensure the Ollama server is running with the `tinyllama` model on `http://localhost:11434`.")
+    st.info("Powered by Hugging Face Inference API. No local server needed.")
+
 
 # Input query
 query = st.text_input("Enter your query:", placeholder="e.g., odor in Vatva", key="query_input")
