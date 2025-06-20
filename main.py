@@ -140,3 +140,7 @@ async def download_csv(query: str = Form(...)):
             return {"error": "No results to download."}
     except Exception as e:
         return {"error": f"Failed to generate CSV: {str(e)}"}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000)
