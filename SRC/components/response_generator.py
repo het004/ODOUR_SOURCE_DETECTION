@@ -59,15 +59,18 @@ class ResponseGenerator:
             return None
 
     def _get_key_from_file(self) -> str:
+        #'"""Fallback: Get API key from local file (for development only)"""
         try:
             secrets_path = os.path.join(os.path.dirname(__file__), '..', '..', '.streamlit', 'secrets.toml')
             if os.path.exists(secrets_path):
                 import toml
-                secrets = toml.load(f)
-                return secrets.get("secrets", {}).get("MISTRAL_API_KEY")
+                with open(secrets_path, 'r') as f:  # FIXED: properly define 'f'
+                    secrets = toml.load(f)
+                    return secrets.get("secrets", {}).get("MISTRAL_API_KEY")
         except Exception as e:
             logging.warning(f"Failed to read API key from file: {str(e)}")
-        return None
+            return None
+
 
     def format_sources(self, sources: List[Dict]) -> str:
         try:
