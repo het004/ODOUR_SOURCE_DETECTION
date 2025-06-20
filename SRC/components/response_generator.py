@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-load_dotenv()  # Load .env for local testing
+load_dotenv()
 import sys
 from typing import List, Dict
 from dataclasses import dataclass
@@ -23,27 +23,20 @@ class ResponseGeneratorConfig:
 class ResponseGenerator:
     def __init__(self):
         self.config = ResponseGeneratorConfig()
-        self.api_url = "https://router.huggingface.co/featherless-ai/v1/chat/completions"
+        self.api_url = "https://api.mistral.ai/v1/chat/completions"  # Mistral official API
         self.api_key = self._get_api_key()
-        
-        # Validate the API key exists
+
         if not self.api_key:
-            raise ValueError("HuggingFace API key not found in any available source")
-        
-        # Debug logging (remove in production)
-        logging.debug("HuggingFace API key loaded successfully")
+            raise ValueError("Mistral API key not found in any available source")
+
+        logging.debug("Mistral API key loaded successfully")
 
     def _get_api_key(self) -> str:
-        """
-        Secure method to retrieve API key from multiple possible sources
-        with proper priority and error handling
-        """
         key_sources = [
-            self._get_key_from_env_vars,    # Highest priority - environment variables
-            self._get_key_from_streamlit,    # Medium priority - Streamlit secrets
-            self._get_key_from_file          # Lowest priority - local file
+            self._get_key_from_env_vars,
+            self._get_key_from_streamlit,
+            self._get_key_from_file
         ]
-        
         for source in key_sources:
             try:
                 api_key = source()
@@ -51,33 +44,27 @@ class ResponseGenerator:
                     return api_key
             except Exception as e:
                 logging.warning(f"Failed to get API key from {source.__name__}: {str(e)}")
-                continue
-                
         return None
 
     def _get_key_from_env_vars(self) -> str:
-        """Get API key from environment variables"""
-        return os.getenv("HF_API_KEY") or os.getenv("HUGGINGFACE_API_KEY")
+        return os.getenv("MISTRAL_API_KEY")  # Updated to use Mistral key
 
     def _get_key_from_streamlit(self) -> str:
-        """Get API key from Streamlit secrets if available"""
         if not USE_STREAMLIT:
             return None
         try:
-            return st.secrets.get("HF_API_KEY") or st.secrets.get("HUGGINGFACE_API_KEY")
+            return st.secrets.get("MISTRAL_API_KEY")
         except Exception as e:
             logging.warning(f"Streamlit secrets access failed: {str(e)}")
             return None
 
     def _get_key_from_file(self) -> str:
-        """Fallback: Get API key from local file (for development only)"""
         try:
             secrets_path = os.path.join(os.path.dirname(__file__), '..', '..', '.streamlit', 'secrets.toml')
             if os.path.exists(secrets_path):
-                with open(secrets_path, 'r') as f:
-                    import toml
-                    secrets = toml.load(f)
-                    return secrets.get("secrets", {}).get("HF_API_KEY")
+                import toml
+                secrets = toml.load(f)
+                return secrets.get("secrets", {}).get("MISTRAL_API_KEY")
         except Exception as e:
             logging.warning(f"Failed to read API key from file: {str(e)}")
         return None
@@ -107,18 +94,22 @@ class ResponseGenerator:
                 {"role": "user", "content": f"""Based on the query \"{query}\" and the extracted location \"{location}\", the following potential odor sources were found:\n\n{formatted_sources}\n\nSummarize these findings, including the location and relevant details (e.g., source names, types, distances). If no sources are found, inform the user that no odor sources were identified near the location."""}
             ]
 
-            headers = {"Authorization": f"Bearer {self.api_key}"}
+            headers = {
+                "Authorization": f"Bearer {self.api_key}",
+                "Content-Type": "application/json"
+            }
             payload = {
+                "model": "mistral-small-latest",  # FREE-TIER MODEL
                 "messages": messages,
-                "model": "HuggingFaceH4/zephyr-7b-beta"
+                "max_tokens": self.config.max_response_length
             }
 
             response = requests.post(self.api_url, headers=headers, json=payload)
-            response.raise_for_status()  # Raises exception for 4XX/5XX responses
-            
+            response.raise_for_status()
+
             result = response.json()
             return result["choices"][0]["message"]["content"].strip()
-            
+
         except requests.exceptions.RequestException as e:
             error_msg = f"API request failed: {str(e)}"
             if hasattr(e, 'response') and e.response:

@@ -3352,3 +3352,100 @@ pip install python-multipart
 2025-06-20 16:08:50,973 - root - INFO - Processed query, found 15 odor sources
 2025-06-20 16:08:50,973 - root - INFO - Extracting location from user query: odor in vatva
 2025-06-20 16:08:50,977 - root - INFO - Location matched from Ahmedabad list: Vatva
+2025-06-20 17:31:49,475 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-20 17:31:49,577 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-20 17:31:49,577 - root - INFO - OdorSourcePipeline successfully initialized
+2025-06-20 17:31:49,584 - fastapi - ERROR - Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+
+2025-06-20 17:34:20,261 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-20 17:34:20,331 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-20 17:34:20,331 - root - INFO - OdorSourcePipeline successfully initialized
+2025-06-20 17:34:20,334 - fastapi - ERROR - Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+
+2025-06-20 17:39:54,645 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-20 17:39:54,736 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-20 17:39:54,736 - root - INFO - OdorSourcePipeline successfully initialized
+2025-06-20 17:40:18,147 - root - INFO - Starting pipeline execution
+2025-06-20 17:40:18,147 - root - INFO - Entered the data ingestion method or component to load a GeoJSON file into a GeoDataFrame.
+2025-06-20 17:40:19,778 - root - INFO - Read the datasets as geopandas GeoDataFrame.
+2025-06-20 17:40:20,292 - root - INFO - Ingestion is completed.
+2025-06-20 17:40:20,293 - root - INFO - Started processing of GeoJSON data.
+2025-06-20 17:40:22,741 - root - INFO - Data has been processed and saved to artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-20 17:40:22,757 - root - INFO - First 5 rows of processed data:
+                 name     type                                               tags   latitude  longitude        area_m2
+0                None  Polygon                          {"landuse": "industrial"}  22.823841  72.600146  195795.400294
+1               AMGEN  Polygon  {"landuse": "industrial", "power": "plant", "p...  23.071507  72.593289  437670.283740
+2  ICD Khodiyar depot  Polygon                          {"landuse": "industrial"}  23.165492  72.549443  638732.197203
+3                None  Polygon                          {"landuse": "industrial"}  22.973104  72.559483   14032.095402
+4   Wonder Industries  Polygon  {"landuse": "industrial", "industrial": "manuf...  22.755604  72.335554   51901.426435
+2025-06-20 17:40:22,757 - root - INFO - Data processing completed. Output at artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-20 17:40:22,758 - root - INFO - Loading data from artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-20 17:40:22,787 - root - INFO - Data loaded successfully.
+2025-06-20 17:40:22,788 - root - INFO - Preprocessing text data for TF-IDF vectorization.
+2025-06-20 17:40:22,797 - root - INFO - Text preprocessing completed.
+2025-06-20 17:40:22,798 - root - INFO - Generating TF-IDF matrix.
+2025-06-20 17:40:22,854 - root - INFO - TF-IDF vectorizer saved at artifacts\tfidf_vectorizer.pkl.
+2025-06-20 17:40:22,855 - root - INFO - TF-IDF feature matrix saved at artifacts\feature_matrix.pkl.
+2025-06-20 17:40:22,856 - root - INFO - Knowledge base preparation completed successfully.
+2025-06-20 17:40:22,856 - root - INFO - Knowledge base preparation completed
+2025-06-20 17:40:22,856 - root - INFO - Processing query: odor in vatva
+2025-06-20 17:40:22,856 - root - INFO - Processing query: odor in vatva
+2025-06-20 17:40:22,858 - root - INFO - Extracting location from user query: odor in vatva
+2025-06-20 17:40:22,930 - root - INFO - Location matched from Ahmedabad list: Vatva
+2025-06-20 17:40:22,930 - root - INFO - Geocoding location: Vatva
+2025-06-20 17:40:24,255 - root - INFO - Geocoded Vatva to (22.9589978, 72.6297981)
+2025-06-20 17:40:24,256 - root - INFO - Finding odor sources near (22.9589978, 72.6297981)
+2025-06-20 17:40:24,286 - root - INFO - Found 33 odor sources within 5000.0m
+2025-06-20 17:40:24,292 - root - INFO - Filtering odor sources based on tags and query similarity
+2025-06-20 17:40:24,305 - root - INFO - Filtered 15 odor sources with similarity scores
+2025-06-20 17:40:24,308 - root - INFO - Sorted odor sources by distance_m in ascending order
+2025-06-20 17:40:24,310 - root - INFO - Processed query, found 15 odor sources
+2025-06-20 17:40:24,311 - root - INFO - Extracting location from user query: odor in vatva
+2025-06-20 17:40:24,321 - root - INFO - Location matched from Ahmedabad list: Vatva
+2025-06-20 17:40:24,321 - root - INFO - Found 15 odor sources near Vatva
+2025-06-20 17:40:25,581 - root - ERROR - Pipeline execution failed: Error occured in python script name [C:\Internship_oizom_project\ODOUR_SOURCE_DETECTION\SRC\components\response_generator.py] line number [117] error message[API request failed: 402 Client Error: Payment Required for url: https://router.huggingface.co/featherless-ai/v1/chat/completions]
+2025-06-20 17:47:07,396 - root - INFO - Starting pipeline execution
+2025-06-20 17:47:07,397 - root - INFO - Entered the data ingestion method or component to load a GeoJSON file into a GeoDataFrame.
+2025-06-20 17:47:07,619 - root - INFO - Read the datasets as geopandas GeoDataFrame.
+2025-06-20 17:47:08,053 - root - INFO - Ingestion is completed.
+2025-06-20 17:47:08,054 - root - INFO - Started processing of GeoJSON data.
+2025-06-20 17:47:10,370 - root - INFO - Data has been processed and saved to artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-20 17:47:10,382 - root - INFO - First 5 rows of processed data:
+                 name     type                                               tags   latitude  longitude        area_m2
+0                None  Polygon                          {"landuse": "industrial"}  22.823841  72.600146  195795.400294
+1               AMGEN  Polygon  {"landuse": "industrial", "power": "plant", "p...  23.071507  72.593289  437670.283740
+2  ICD Khodiyar depot  Polygon                          {"landuse": "industrial"}  23.165492  72.549443  638732.197203
+3                None  Polygon                          {"landuse": "industrial"}  22.973104  72.559483   14032.095402
+4   Wonder Industries  Polygon  {"landuse": "industrial", "industrial": "manuf...  22.755604  72.335554   51901.426435
+2025-06-20 17:47:10,382 - root - INFO - Data processing completed. Output at artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-20 17:47:10,382 - root - INFO - Loading data from artifacts\ahmedabad_odor_sources_cleaned.csv
+2025-06-20 17:47:10,413 - root - INFO - Data loaded successfully.
+2025-06-20 17:47:10,413 - root - INFO - Preprocessing text data for TF-IDF vectorization.
+2025-06-20 17:47:10,421 - root - INFO - Text preprocessing completed.
+2025-06-20 17:47:10,422 - root - INFO - Generating TF-IDF matrix.
+2025-06-20 17:47:10,430 - root - INFO - TF-IDF vectorizer saved at artifacts\tfidf_vectorizer.pkl.
+2025-06-20 17:47:10,433 - root - INFO - TF-IDF feature matrix saved at artifacts\feature_matrix.pkl.
+2025-06-20 17:47:10,433 - root - INFO - Knowledge base preparation completed successfully.
+2025-06-20 17:47:10,433 - root - INFO - Knowledge base preparation completed
+2025-06-20 17:47:10,433 - root - INFO - Processing query: odor in vatva
+2025-06-20 17:47:10,433 - root - INFO - Processing query: odor in vatva
+2025-06-20 17:47:10,433 - root - INFO - Extracting location from user query: odor in vatva
+2025-06-20 17:47:10,445 - root - INFO - Location matched from Ahmedabad list: Vatva
+2025-06-20 17:47:10,445 - root - INFO - Geocoding location: Vatva
+2025-06-20 17:47:11,405 - root - INFO - Geocoded Vatva to (22.9589978, 72.6297981)
+2025-06-20 17:47:11,406 - root - INFO - Finding odor sources near (22.9589978, 72.6297981)
+2025-06-20 17:47:11,426 - root - INFO - Found 33 odor sources within 5000.0m
+2025-06-20 17:47:11,428 - root - INFO - Filtering odor sources based on tags and query similarity
+2025-06-20 17:47:11,433 - root - INFO - Filtered 15 odor sources with similarity scores
+2025-06-20 17:47:11,434 - root - INFO - Sorted odor sources by distance_m in ascending order
+2025-06-20 17:47:11,437 - root - INFO - Processed query, found 15 odor sources
+2025-06-20 17:47:11,437 - root - INFO - Extracting location from user query: odor in vatva
+2025-06-20 17:47:11,453 - root - INFO - Location matched from Ahmedabad list: Vatva
+2025-06-20 17:47:11,453 - root - INFO - Found 15 odor sources near Vatva
+2025-06-20 17:47:12,224 - root - ERROR - Pipeline execution failed: Error occured in python script name [C:\Internship_oizom_project\ODOUR_SOURCE_DETECTION\SRC\components\response_generator.py] line number [117] error message[API request failed: 402 Client Error: Payment Required for url: https://router.huggingface.co/featherless-ai/v1/chat/completions]
