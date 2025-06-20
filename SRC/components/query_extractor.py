@@ -2,7 +2,14 @@ import os
 import sys
 from typing import Optional
 from geotext import GeoText
+# Add this to your __init__.py or startup script
 import spacy
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    print("Downloading spaCy model 'en_core_web_sm'...")
+    spacy.cli.download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
 import re
 from SRC.exception import CustomException
 from SRC.logger import logging
