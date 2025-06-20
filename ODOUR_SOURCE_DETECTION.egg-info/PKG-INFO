@@ -14,6 +14,10 @@ Requires-Dist: spacy[transformers]>=3.7.6
 Requires-Dist: geotext==0.4.0
 Requires-Dist: streamlit
 Requires-Dist: requests
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: jinja2
+Requires-Dist: pandas
 Requires-Dist: python-dotenv>=1.0.0
 Dynamic: author
 Dynamic: author-email
