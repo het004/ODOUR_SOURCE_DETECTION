@@ -23,7 +23,7 @@ class ResponseGeneratorConfig:
 class ResponseGenerator:
     def __init__(self):
         self.config = ResponseGeneratorConfig()
-        self.api_url = "https://router.huggingface.co/nebius/v1/chat/completions"
+        self.api_url = "https://router.huggingface.co/featherless-ai/v1/chat/completions"
         self.api_key = self._get_api_key()
         
         # Validate the API key exists
@@ -110,7 +110,7 @@ class ResponseGenerator:
             headers = {"Authorization": f"Bearer {self.api_key}"}
             payload = {
                 "messages": messages,
-                "model": "deepseek-ai/DeepSeek-R1-fast"
+                "model": "HuggingFaceH4/zephyr-7b-beta"
             }
 
             response = requests.post(self.api_url, headers=headers, json=payload)
