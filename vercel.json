@@ -15,12 +15,5 @@
   ],
   "env": {
     "APP_MODULE": "main:app"
-  },
-  "excludeFiles": [
-    "**/*.pyc",
-    "**/__pycache__/**",
-    ".env",
-    ".git/**",
-    ".venv/**"
-  ]
+  }
 }
