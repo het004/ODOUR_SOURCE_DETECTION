@@ -3257,3 +3257,38 @@ pip install python-multipart
 2025-06-20 15:38:26,109 - root - INFO - Processed query, found 15 odor sources
 2025-06-20 15:38:26,109 - root - INFO - Extracting location from user query: odor in vatva
 2025-06-20 15:38:26,118 - root - INFO - Location matched from Ahmedabad list: Vatva
+2025-06-20 15:58:17,990 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-20 15:58:18,045 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-20 15:58:18,046 - root - INFO - OdorSourcePipeline successfully initialized with all components
+2025-06-20 15:58:36,157 - root - INFO - Starting pipeline execution
+2025-06-20 15:58:36,157 - root - INFO - Processing data
+2025-06-20 15:58:36,157 - root - ERROR - Pipeline execution failed: 'Dataingestion_DataProcessing' object has no attribute 'intiatedataingestion'
+2025-06-20 16:00:20,671 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-20 16:00:20,695 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-20 16:00:20,695 - root - INFO - OdorSourcePipeline successfully initialized
+2025-06-20 16:00:35,302 - root - INFO - Starting pipeline execution
+2025-06-20 16:00:35,302 - root - ERROR - Pipeline execution failed: 'Dataingestion_DataProcessing' object has no attribute 'initiatedataingestion'
+2025-06-20 16:02:00,619 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-20 16:02:00,650 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-20 16:02:00,650 - root - INFO - OdorSourcePipeline successfully initialized
+2025-06-20 16:02:14,094 - root - INFO - Starting pipeline execution
+2025-06-20 16:02:14,094 - root - ERROR - Pipeline execution failed: 'Dataingestion_DataProcessing' object has no attribute 'initiatedataingestion'
+2025-06-20 16:03:45,380 - root - INFO - Starting pipeline execution
+2025-06-20 16:03:45,380 - root - ERROR - Pipeline execution failed: 'Dataingestion_DataProcessing' object has no attribute 'initiatedataingestion'
+2025-06-20 16:03:59,536 - root - INFO - Starting pipeline execution
+2025-06-20 16:03:59,536 - root - ERROR - Pipeline execution failed: 'Dataingestion_DataProcessing' object has no attribute 'initiatedataingestion'
+2025-06-20 16:06:39,749 - root - INFO - Starting pipeline execution
+2025-06-20 16:06:39,749 - root - ERROR - Pipeline execution failed: 'Dataingestion_DataProcessing' object has no attribute 'initiatedataingestion'
+2025-06-20 16:07:03,712 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-20 16:07:03,742 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-20 16:07:03,742 - root - INFO - OdorSourcePipeline successfully initialized
+2025-06-20 16:07:21,223 - root - INFO - Starting pipeline execution
+2025-06-20 16:07:21,223 - root - INFO - Entered the data ingestion method or component to load a GeoJSON file into a GeoDataFrame.
+2025-06-20 16:07:21,861 - root - INFO - Read the datasets as geopandas GeoDataFrame.
+2025-06-20 16:07:22,130 - root - INFO - Ingestion is completed.
+2025-06-20 16:07:22,131 - root - ERROR - Pipeline execution failed: 'Dataingestion_DataProcessing' object has no attribute 'initiatedataProcessor'
+2025-06-20 16:08:00,691 - root - INFO - Starting pipeline execution
+2025-06-20 16:08:00,691 - root - INFO - Entered the data ingestion method or component to load a GeoJSON file into a GeoDataFrame.
+2025-06-20 16:08:00,791 - root - INFO - Read the datasets as geopandas GeoDataFrame.
+2025-06-20 16:08:00,952 - root - INFO - Ingestion is completed.
+2025-06-20 16:08:00,952 - root - ERROR - Pipeline execution failed: 'Dataingestion_DataProcessing' object has no attribute 'initiatedataProcessor'

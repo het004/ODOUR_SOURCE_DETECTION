@@ -22,8 +22,16 @@ class Dataingestion_DataProcessing:
     def intiatedataingestion(self):
         logging.info("Entered the data ingestion method or component to load a GeoJSON file into a GeoDataFrame.")
         try:
-            df = gpd.read_file(r"data\export (2).geojson")
+            # Use pathlib for cross-platform path handling
+            data_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'data')
+            geojson_path = os.path.join(data_dir, 'export.geojson')  # Renamed file
+            
+            if not os.path.exists(geojson_path):
+                raise FileNotFoundError(f"GeoJSON file not found at {geojson_path}")
+            
+            df = gpd.read_file(geojson_path)
             logging.info("Read the datasets as geopandas GeoDataFrame.")
+            
             os.makedirs(os.path.dirname(self.ingestion_processing_config.raw_data_path), exist_ok=True)
             df.to_file(self.ingestion_processing_config.raw_data_path, index=False)
             logging.info("Ingestion is completed.")
