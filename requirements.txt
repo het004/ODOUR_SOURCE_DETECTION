@@ -8,4 +8,5 @@ spacy==3.7.6
 geotext==0.4.0
 streamlit
 requests
+python-dotenv>=1.0.0 
 -e .
