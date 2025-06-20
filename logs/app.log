@@ -2584,3 +2584,9 @@ You can install "python-multipart" with:
 
 pip install python-multipart
 
+2025-06-20 13:38:15,259 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-20 13:38:15,341 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-20 13:38:15,848 - root - INFO - OdorSourcePipeline initialized with all components.
+2025-06-20 13:39:55,038 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-20 13:39:55,117 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-20 13:39:55,544 - root - INFO - OdorSourcePipeline initialized with all components.
