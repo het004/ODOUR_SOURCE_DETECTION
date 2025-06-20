@@ -8,10 +8,11 @@ from SRC.exception import CustomException
 from SRC.logger import logging
 import requests
 
+# Streamlit import with better handling
 try:
     import streamlit as st
     USE_STREAMLIT = True
-except ImportError:
+except (ImportError, ModuleNotFoundError):
     USE_STREAMLIT = False
 
 @dataclass
@@ -23,12 +24,63 @@ class ResponseGenerator:
     def __init__(self):
         self.config = ResponseGeneratorConfig()
         self.api_url = "https://router.huggingface.co/nebius/v1/chat/completions"
-        if USE_STREAMLIT:
-            self.api_key = st.secrets["HF_API_KEY"]
-        else:
-            self.api_key = os.getenv("HF_API_KEY")  # Local environment
+        self.api_key = self._get_api_key()
+        
+        # Validate the API key exists
+        if not self.api_key:
+            raise ValueError("HuggingFace API key not found in any available source")
+        
+        # Debug logging (remove in production)
+        logging.debug("HuggingFace API key loaded successfully")
 
-        print("Loaded HF_API_KEY:", self.api_key)  # Debug print, remove in production
+    def _get_api_key(self) -> str:
+        """
+        Secure method to retrieve API key from multiple possible sources
+        with proper priority and error handling
+        """
+        key_sources = [
+            self._get_key_from_env_vars,    # Highest priority - environment variables
+            self._get_key_from_streamlit,    # Medium priority - Streamlit secrets
+            self._get_key_from_file          # Lowest priority - local file
+        ]
+        
+        for source in key_sources:
+            try:
+                api_key = source()
+                if api_key:
+                    return api_key
+            except Exception as e:
+                logging.warning(f"Failed to get API key from {source.__name__}: {str(e)}")
+                continue
+                
+        return None
+
+    def _get_key_from_env_vars(self) -> str:
+        """Get API key from environment variables"""
+        return os.getenv("HF_API_KEY") or os.getenv("HUGGINGFACE_API_KEY")
+
+    def _get_key_from_streamlit(self) -> str:
+        """Get API key from Streamlit secrets if available"""
+        if not USE_STREAMLIT:
+            return None
+        try:
+            return st.secrets.get("HF_API_KEY") or st.secrets.get("HUGGINGFACE_API_KEY")
+        except Exception as e:
+            logging.warning(f"Streamlit secrets access failed: {str(e)}")
+            return None
+
+    def _get_key_from_file(self) -> str:
+        """Fallback: Get API key from local file (for development only)"""
+        try:
+            secrets_path = os.path.join(os.path.dirname(__file__), '..', '..', '.streamlit', 'secrets.toml')
+            if os.path.exists(secrets_path):
+                with open(secrets_path, 'r') as f:
+                    import toml
+                    secrets = toml.load(f)
+                    return secrets.get("secrets", {}).get("HF_API_KEY")
+        except Exception as e:
+            logging.warning(f"Failed to read API key from file: {str(e)}")
+        return None
 
     def format_sources(self, sources: List[Dict]) -> str:
         try:
@@ -46,6 +98,7 @@ class ResponseGenerator:
             return "\n".join(formatted)
         except Exception as e:
             raise CustomException(e, sys)
+
     def generate_response(self, query: str, location: str, sources: List[Dict]) -> str:
         try:
             formatted_sources = self.format_sources(sources)
@@ -61,11 +114,16 @@ class ResponseGenerator:
             }
 
             response = requests.post(self.api_url, headers=headers, json=payload)
-            if response.status_code == 200:
-                result = response.json()
-                return result["choices"][0]["message"]["content"].strip()
-            else:
-                raise Exception(f"HuggingFace API error: {response.status_code} - {response.text}")
+            response.raise_for_status()  # Raises exception for 4XX/5XX responses
+            
+            result = response.json()
+            return result["choices"][0]["message"]["content"].strip()
+            
+        except requests.exceptions.RequestException as e:
+            error_msg = f"API request failed: {str(e)}"
+            if hasattr(e, 'response') and e.response:
+                error_msg += f" (Status: {e.response.status_code}, Response: {e.response.text[:200]})"
+            raise CustomException(error_msg, sys)
         except Exception as e:
             raise CustomException(e, sys)
 
