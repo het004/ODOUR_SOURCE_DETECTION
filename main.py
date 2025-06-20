@@ -1,7 +1,7 @@
 import os
 import sys
 import pandas as pd
-from fastapi import FastAPI, Form, Request
+from fastapi import FastAPI, Form, Request, Depends
 from fastapi.responses import HTMLResponse, StreamingResponse
 from fastapi.templating import Jinja2Templates
 from io import StringIO
@@ -60,16 +60,19 @@ async def find_odor_sources(request: Request, query: str = Form(...)):
         # Prepare data for table display
         data = []
         if results:
-            for result in results:
-                data.append({
-                    "Name": result['name'],
-                    "Type": result['type'],
-                    "Tags": ", ".join(f"{k}: {v}" for k, v in result['tags'].items()),
-                    "Location": f"({result['latitude']}, {result['longitude']})",
-                    "Distance (UTM)": f"{result['distance_m']:.2f} meters",
-                    "Distance (Haversine)": f"{result['distance_m_haversine']:.2f} meters",
-                    "Similarity": f"{result['similarity']:.4f}"
-                })
+            if isinstance(results, (list, tuple)):
+                for result in results:
+                    data.append({
+                        "Name": result.get('name', 'Unknown'),
+                        "Type": result.get('type', 'Unknown'),
+                        "Tags": ", ".join(f"{k}: {v}" for k, v in result.get('tags', {}).items()),
+                        "Location": f"({result.get('latitude', 0)}, {result.get('longitude', 0)})",
+                        "Distance (UTM)": f"{result.get('distance_m', 0):.2f} meters",
+                        "Distance (Haversine)": f"{result.get('distance_m_haversine', 0):.2f} meters",
+                        "Similarity": f"{result.get('similarity', 0):.4f}"
+                    })
+            else:
+                print(f"Unexpected results type: {type(results)} - {results}")
 
         # Render the results page
         return templates.TemplateResponse(
@@ -114,13 +117,13 @@ async def download_csv(query: str = Form(...)):
         if results:
             data = [
                 {
-                    "Name": result['name'],
-                    "Type": result['type'],
-                    "Tags": ", ".join(f"{k}: {v}" for k, v in result['tags'].items()),
-                    "Location": f"({result['latitude']}, {result['longitude']})",
-                    "Distance (UTM)": f"{result['distance_m']:.2f} meters",
-                    "Distance (Haversine)": f"{result['distance_m_haversine']:.2f} meters",
-                    "Similarity": f"{result['similarity']:.4f}"
+                    "Name": result.get('name', 'Unknown'),
+                    "Type": result.get('type', 'Unknown'),
+                    "Tags": ", ".join(f"{k}: {v}" for k, v in result.get('tags', {}).items()),
+                    "Location": f"({result.get('latitude', 0)}, {result.get('longitude', 0)})",
+                    "Distance (UTM)": f"{result.get('distance_m', 0):.2f} meters",
+                    "Distance (Haversine)": f"{result.get('distance_m_haversine', 0):.2f} meters",
+                    "Similarity": f"{result.get('similarity', 0):.4f}"
                 }
                 for result in results
             ]
