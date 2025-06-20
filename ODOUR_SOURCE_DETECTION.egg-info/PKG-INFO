@@ -9,9 +9,9 @@ Requires-Dist: pandas==2.2.3
 Requires-Dist: shapely==2.0.6
 Requires-Dist: scikit-learn==1.5.2
 Requires-Dist: geopy==2.4.1
-Requires-Dist: spacy==3.7.6
+Requires-Dist: spacy==3.8.5
 Requires-Dist: spacy[transformers]>=3.7.6
-Requires-Dist: geotext==0.4.0
+Requires-Dist: geotext
 Requires-Dist: streamlit
 Requires-Dist: requests
 Requires-Dist: fastapi
@@ -19,6 +19,7 @@ Requires-Dist: uvicorn
 Requires-Dist: jinja2
 Requires-Dist: pandas
 Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: python-multipart==0.0.12
 Dynamic: author
 Dynamic: author-email
 Dynamic: requires-dist

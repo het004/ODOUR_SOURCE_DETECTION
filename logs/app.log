@@ -2573,3 +2573,14 @@ For further information visit https://errors.pydantic.dev/2.11/u/class-not-fully
 2025-06-20 11:36:16,967 - root - INFO - Processed query, found 13 odor sources
 2025-06-20 11:36:16,968 - root - INFO - Extracting location from user query: smell in nikol
 2025-06-20 11:36:16,977 - root - INFO - Location matched from Ahmedabad list: Nikol
+2025-06-20 13:31:40,973 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-20 13:31:48,121 - root - INFO - Extracting location from user query: smell in vatva
+2025-06-20 13:31:48,168 - root - INFO - Location matched from Ahmedabad list: Vatva
+2025-06-20 13:32:24,164 - root - INFO - QueryExtractor initialized using geotext, SpaCy, and Ahmedabad area list.
+2025-06-20 13:32:24,247 - root - INFO - QueryProcessor initialized with knowledge base artifacts.
+2025-06-20 13:32:24,674 - root - INFO - OdorSourcePipeline initialized with all components.
+2025-06-20 13:32:24,678 - fastapi - ERROR - Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+

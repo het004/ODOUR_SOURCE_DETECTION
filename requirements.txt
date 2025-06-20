@@ -4,14 +4,15 @@ pandas==2.2.3
 shapely==2.0.6
 scikit-learn==1.5.2
 geopy==2.4.1
-spacy==3.7.6
+spacy==3.8.5
 spacy[transformers]>=3.7.6  # Optional
-geotext==0.4.0
+geotext
 streamlit
 requests
 fastapi
 uvicorn
 jinja2
 pandas
-python-dotenv>=1.0.0 
+python-dotenv>=1.0.0
+python-multipart==0.0.12
 -e .
