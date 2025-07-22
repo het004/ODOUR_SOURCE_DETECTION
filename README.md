@@ -12,7 +12,7 @@
 
 **🏭 Revolutionary Geospatial AI system for environmental monitoring and pollution source identification in urban areas**
 
-[🌐 Live Demo](https://odoursourcedetection-production.up.railway.app/) • [🚀 Features](#-key-features) • [📖 Installation](#-installation) • [🔧 Usage](#-usage) • [🏗️ Architecture](#-system-architecture)
+[🌐 Live Demo](https://odour-source-detection.onrender.com/) • [🚀 Features](#-key-features) • [📖 Installation](#-installation) • [🔧 Usage](#-usage) • [🏗️ Architecture](#-system-architecture)
 
 </div>
 
@@ -84,7 +84,7 @@ graph TD
 ## 🚀 **Live Demo & Deployment**
 
 ### 🌐 **Production Application**
-**Access the live application**: [https://odoursourcedetection-production.up.railway.app/](https://odoursourcedetection-production.up.railway.app/)
+**Access the live application**: [https://odour-source-detection.onrender.com/](https://odour-source-detection.onrender.com/)
 
 ### 📱 **Try It Out**
 1. Visit the live demo link above
@@ -399,7 +399,7 @@ We welcome contributions from environmental engineers, data scientists, and deve
 **👨‍💻 Developer**: [het004](https://github.com/het004) | **🏢 Organization**: Oizom Internship Program
 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/het004)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](#)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/het-shah-a29225248/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hetshah1718@gmail.com)
 
 **🐛 Issues**: [Report bugs](https://github.com/het004/ODOUR_SOURCE_DETECTION/issues) | **💬 Discussions**: [Feature requests](https://github.com/het004/ODOUR_SOURCE_DETECTION/discussions)
